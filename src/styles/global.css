@@ -1,0 +1,212 @@
+@import './variables.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #EEF2F6;
+  color: var(--navy-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Mobile Frame Wrapper - Full Length & 100% Fluid Responsiveness */
+.mobile-app-viewport {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  background-color: var(--white);
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 520px) {
+  .mobile-app-viewport {
+    max-width: 100%;
+    box-shadow: none;
+  }
+}
+
+/* Base Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--navy-primary);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.text-red {
+  color: var(--red-accent) !important;
+}
+
+.text-navy {
+  color: var(--navy-primary) !important;
+}
+
+.text-grey {
+  color: var(--slate-grey) !important;
+}
+
+.font-serif-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+/* Section Rhythm Layout */
+.section-wrapper {
+  padding: var(--section-space) var(--pad-mobile-x);
+  position: relative;
+  width: 100%;
+}
+
+.section-wrapper.bg-white {
+  background-color: var(--white);
+}
+
+.section-wrapper.bg-light {
+  background-color: var(--bg-light);
+}
+
+.section-wrapper.bg-navy {
+  background-color: var(--navy-dark);
+  color: var(--white);
+}
+
+.section-wrapper.bg-navy h2,
+.section-wrapper.bg-navy h3 {
+  color: var(--white);
+}
+
+/* Section Header Rhythm */
+.section-header-block {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.pill-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid rgba(23, 55, 94, 0.15);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy-primary);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  margin-bottom: 14px;
+}
+
+.pill-label .dot-red {
+  width: 7px;
+  height: 7px;
+  background-color: var(--red-accent);
+  border-radius: 50%;
+}
+
+.pill-label.dark-theme {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+.section-heading-large {
+  font-size: clamp(1.75rem, 5.5vw, 2.2rem);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--slate-grey);
+  font-weight: 500;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Button Styling Guidelines */
+.btn-primary-red {
+  background-color: var(--red-accent);
+  color: var(--white);
+  border: none;
+  padding: 14px 24px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  min-height: 48px;
+  box-shadow: 0 4px 16px rgba(215, 71, 59, 0.25);
+  text-decoration: none;
+}
+
+.btn-primary-red:active {
+  transform: scale(0.98);
+  background-color: var(--red-hover);
+}
+
+.btn-secondary-navy {
+  background-color: transparent;
+  color: var(--navy-primary);
+  border: 1.5px solid var(--navy-primary);
+  padding: 12px 22px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.btn-secondary-navy:active {
+  background-color: rgba(23, 55, 94, 0.05);
+}
+
+/* Card Base Guidelines */
+.card-base {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--grey-border);
+  box-shadow: var(--shadow-subtle);
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Floating Animations */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float-1 { animation: floatGentle 4s ease-in-out infinite; }
+.animate-float-2 { animation: floatGentle 4.5s ease-in-out infinite 0.5s; }
+.animate-float-3 { animation: floatGentle 5s ease-in-out infinite 1s; }

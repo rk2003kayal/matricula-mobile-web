@@ -1,0 +1,61 @@
+.enquire-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background-color: rgba(14, 35, 63, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.enquire-modal-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--white);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: var(--shadow-floating);
+}
+
+.modal-brand-logo {
+  height: 32px;
+}
+
+.enquire-form-heading {
+  font-size: 1.2rem;
+  color: var(--navy-primary);
+  margin-bottom: 2px;
+}
+
+.enquire-form-sub {
+  font-size: 0.84rem;
+  color: var(--slate-grey);
+  margin-bottom: 18px;
+}
+
+.no-icon {
+  padding-left: 14px !important;
+}
+
+.modal-success-state {
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-success-state h3 {
+  font-size: 1.3rem;
+  color: var(--navy-primary);
+}
+
+.modal-success-state p {
+  font-size: 0.88rem;
+  color: var(--slate-grey);
+  line-height: 1.5;
+}

@@ -1,0 +1,48 @@
+.sticky-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--grey-border);
+  padding: 10px 14px 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 90;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 520px) {
+  .sticky-bottom-bar {
+    max-width: 100%;
+  }
+}
+
+.sticky-call-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-light);
+  border: 1.5px solid var(--navy-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.sticky-call-btn:active {
+  background: var(--grey-border);
+}
+
+.sticky-enquire-btn {
+  flex: 1;
+  font-size: clamp(0.76rem, 2.5vw, 0.88rem);
+  padding: 10px 14px;
+  min-height: 44px;
+  white-space: nowrap;
+}

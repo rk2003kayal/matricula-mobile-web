@@ -1,0 +1,122 @@
+.visionaries-section {
+  position: relative;
+  padding-top: 24px;
+}
+
+/* Capsule Activation Styles */
+.visionary-capsule {
+  transition: all 0.4s ease;
+}
+
+.visionary-capsule.activated-capsule {
+  background-color: var(--navy-primary) !important;
+  color: var(--white) !important;
+  border-color: var(--navy-primary) !important;
+  box-shadow: 0 6px 20px rgba(23, 55, 94, 0.35) !important;
+  transform: scale(1.05);
+}
+
+.visionary-capsule.activated-capsule .dot-red {
+  background-color: var(--red-accent);
+  box-shadow: 0 0 8px var(--red-accent);
+}
+
+/* 2 Side-by-Side Cards Grid on Mobile */
+.visionaries-2col-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.visionary-card {
+  padding: 16px 12px;
+  background: var(--white);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  min-height: 250px;
+}
+
+.visionary-portrait-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 16px rgba(23, 55, 94, 0.15);
+  border: 2px solid var(--white);
+}
+
+.visionary-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.visionary-name {
+  font-size: 0.95rem;
+  color: var(--navy-primary);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.visionary-role {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--red-accent);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.quote-box {
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 10px 8px;
+  position: relative;
+  border: 1px solid var(--grey-border);
+  width: 100%;
+}
+
+.quote-icon {
+  margin-bottom: 2px;
+}
+
+.visionary-quote {
+  font-size: 0.75rem;
+  color: var(--navy-primary);
+  line-height: 1.35;
+  font-style: italic;
+}
+
+.vision-tagline-bar {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  color: var(--slate-grey);
+}
+
+/* See Teachers CTA Button */
+.see-teachers-cta-wrapper {
+  width: 100%;
+}
+
+.see-teachers-btn {
+  font-size: 0.88rem;
+  padding: 14px 18px;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(215, 71, 59, 0.25);
+}

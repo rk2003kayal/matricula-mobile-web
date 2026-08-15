@@ -1,0 +1,136 @@
+.intent-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background-color: rgba(14, 35, 63, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.intent-modal-card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--white);
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.modal-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-header-title h3 {
+  font-size: 1.15rem;
+  color: var(--navy-primary);
+}
+
+.modal-close-btn {
+  background: var(--grey-light);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal-subtitle {
+  font-size: 0.88rem;
+  color: var(--slate-grey);
+  margin-bottom: 18px;
+}
+
+.intent-options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.intent-chip-card {
+  background: var(--bg-light);
+  border: 1.5px solid var(--grey-border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.intent-chip-card:active {
+  transform: scale(0.97);
+}
+
+.intent-chip-card.selected {
+  background: var(--red-light-bg);
+  border-color: var(--red-accent);
+}
+
+.chip-icon {
+  font-size: 1.1rem;
+}
+
+.chip-label {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  flex: 1;
+}
+
+.intent-recommendation-box {
+  background: linear-gradient(135deg, #17375E 0%, #0E233F 100%);
+  border-radius: var(--radius-card);
+  padding: 18px;
+  color: var(--white);
+  margin-top: 10px;
+}
+
+.rec-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--red-accent);
+  margin-bottom: 6px;
+}
+
+.rec-title {
+  font-size: 1.05rem;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.rec-desc {
+  font-size: 0.85rem;
+  color: #CBD5E1;
+  line-height: 1.4;
+}
+
+.mt-12 {
+  margin-top: 14px;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out;
+}

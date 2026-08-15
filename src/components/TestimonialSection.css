@@ -1,0 +1,177 @@
+.testimonial-section {
+  position: relative;
+}
+
+/* Switchable Tabs Toggle */
+.testimonial-tab-toggle {
+  display: flex;
+  background: var(--bg-light);
+  border: 1.5px solid var(--grey-border);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  max-width: 320px;
+  margin: 18px auto 0 auto;
+}
+
+.tab-toggle-btn {
+  flex: 1;
+  border: none;
+  background: none;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--slate-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.25 ease;
+}
+
+.tab-toggle-btn.active {
+  background: var(--white);
+  color: var(--red-accent);
+  box-shadow: 0 4px 12px rgba(23, 55, 94, 0.08);
+}
+
+.testimonial-slider-card {
+  padding: 24px;
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 20px;
+  min-height: 250px;
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.stars-row {
+  display: flex;
+  gap: 4px;
+}
+
+.testimonial-quote-text {
+  font-size: 0.92rem;
+  color: var(--navy-primary);
+  line-height: 1.55;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.testimonial-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--grey-border);
+  margin-bottom: 16px;
+}
+
+.student-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.student-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.student-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-name {
+  font-size: 0.98rem;
+  color: var(--navy-primary);
+  font-weight: 800;
+}
+
+.student-class {
+  font-size: 0.78rem;
+  color: var(--slate-grey);
+}
+
+.student-achievement-badge {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.76rem;
+  color: var(--navy-primary);
+  background: var(--red-light-bg);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(215, 71, 59, 0.2);
+}
+
+.student-achievement-badge strong {
+  color: var(--red-accent);
+}
+
+/* Slider Controls */
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.slider-arrow-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--grey-border);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slider-arrow-btn:active {
+  background: var(--bg-light);
+  transform: scale(0.95);
+}
+
+.dots-indicator {
+  display: flex;
+  gap: 4px;
+  max-width: 200px;
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+.dot-btn {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--grey-border);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.dot-btn.active {
+  width: 18px;
+  border-radius: 4px;
+  background-color: var(--red-accent);
+}

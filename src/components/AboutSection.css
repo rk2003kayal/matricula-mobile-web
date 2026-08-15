@@ -1,0 +1,140 @@
+.about-section {
+  position: relative;
+}
+
+.red-navy-underline {
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(to right, #17375E 50%, #D7473B 50%);
+  margin: 12px auto;
+  border-radius: 2px;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+/* 4x1 Horizontal Grid Layout - Equal Width & Equi-Spaced */
+.class-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.class-card {
+  padding: 12px 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 180px;
+  border-radius: 18px;
+  background: var(--white);
+  border: 1.5px solid var(--grey-border);
+  box-shadow: 0 4px 14px rgba(23, 55, 94, 0.05);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Fixed Header Height Ensures All Dashes Align at the Exact Same Level */
+.class-card-header {
+  height: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 4px;
+}
+
+.class-tag {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--red-accent);
+  display: block;
+}
+
+.class-number {
+  font-size: 1.85rem;
+  line-height: 1;
+  color: var(--navy-primary);
+  font-weight: 900;
+}
+
+/* Dash Line - Aligned at Exact Same Level Across All 4 Cards */
+.class-divider {
+  width: 26px;
+  height: 2px;
+  background-color: var(--grey-border);
+  margin: 6px 0 10px 0;
+}
+
+.class-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.class-card-icon {
+  margin-bottom: 6px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.class-card-desc {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  line-height: 1.25;
+  padding: 0 2px;
+}
+
+/* Banner Box: Logo Removed, "Join Your Class" + Red Triangle Play Arrow */
+.philosophy-callout-box {
+  background: var(--white);
+  border: 1.5px solid var(--grey-border);
+  border-radius: var(--radius-card);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(23, 55, 94, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.philosophy-callout-box:active {
+  transform: scale(0.98);
+  border-color: var(--red-accent);
+}
+
+.join-class-label {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+  letter-spacing: -0.01em;
+}
+
+.callout-play-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

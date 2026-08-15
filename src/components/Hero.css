@@ -1,0 +1,227 @@
+.hero-section {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-typography {
+  text-align: center;
+  padding: 0 var(--pad-mobile-x);
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.hero-title {
+  font-size: clamp(1.7rem, 5.8vw, 2.2rem);
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.title-navy {
+  color: var(--navy-primary);
+  font-weight: 800;
+}
+
+.title-red {
+  color: var(--red-accent);
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.84rem, 2.7vw, 0.95rem);
+  color: var(--slate-grey);
+  font-weight: 500;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Hero Visual Stage - Fully Proportional Height & Width */
+.hero-visual-stage {
+  position: relative;
+  width: 100%;
+  height: clamp(320px, 46vh, 400px);
+  margin-top: 4px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.student-photo-box {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(210px, 62%, 280px);
+  height: 94%;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-student-photo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(23, 55, 94, 0.15));
+  display: block;
+}
+
+/* Thought Bubbles System - Proportional, Compact & Non-Overlapping */
+.thought-bubble {
+  position: absolute;
+  z-index: 10;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 5px 10px;
+  box-shadow: 0 6px 20px rgba(23, 55, 94, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid rgba(23, 55, 94, 0.12);
+  font-size: clamp(0.65rem, 2.2vw, 0.78rem);
+  font-weight: 600;
+  color: var(--navy-primary);
+  max-width: 46%;
+  line-height: 1.25;
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+}
+
+.thought-bubble::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: var(--white);
+  border-right: 1px solid rgba(23, 55, 94, 0.12);
+  border-bottom: 1px solid rgba(23, 55, 94, 0.12);
+  transform: rotate(45deg);
+}
+
+.bubble-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.bubble-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bubble-highlight {
+  color: var(--red-accent);
+  font-weight: 800;
+}
+
+/* 4 Floating Bubbles Proportional Non-Overlapping Positions */
+.bubble-1 {
+  top: 2%;
+  left: 2%;
+}
+.bubble-1::after { bottom: -4px; left: 16px; }
+
+.bubble-2 {
+  top: 3%;
+  right: 2%;
+}
+.bubble-2::after { bottom: -4px; right: 16px; }
+
+.bubble-3 {
+  bottom: 14%;
+  left: 1.5%;
+}
+.bubble-3::after { top: -4px; left: 14px; transform: rotate(-135deg); }
+
+.bubble-4 {
+  bottom: 12%;
+  right: 1.5%;
+}
+.bubble-4::after { top: -4px; right: 14px; transform: rotate(-135deg); }
+
+/* Search Bar Component - Clean Light Background */
+.search-bar-wrapper {
+  width: 100%;
+  background-color: transparent;
+  padding: 16px var(--pad-mobile-x) 24px var(--pad-mobile-x);
+}
+
+.intent-search-bar {
+  width: 100%;
+  background: var(--white);
+  border: 1.5px solid var(--grey-border);
+  border-radius: var(--radius-hero);
+  padding: 8px 8px 8px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(23, 55, 94, 0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.intent-search-bar:active {
+  transform: scale(0.98);
+}
+
+.search-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  flex: 1;
+}
+
+.search-placeholder-container {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* 20% Opacity Search Placeholder Text */
+.placeholder-text-muted {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(0.78rem, 2.5vw, 0.92rem);
+  color: var(--navy-primary);
+  opacity: 0.2;
+}
+
+/* Blinking Multi-Color Cursor Animation */
+@keyframes cursorBlinkAndColor {
+  0%, 100% { opacity: 1; color: #D7473B; }
+  25% { opacity: 0.25; color: #17375E; }
+  50% { opacity: 1; color: #F59E0B; }
+  75% { opacity: 0.25; color: #10B981; }
+}
+
+.blinking-color-cursor {
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-left: 2px;
+  animation: cursorBlinkAndColor 1.2s ease-in-out infinite;
+  display: inline-block;
+}
+
+.search-action-btn {
+  width: 40px;
+  height: 40px;
+  background-color: var(--red-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}

@@ -1,0 +1,39 @@
+:root {
+  /* Brand Colors */
+  --navy-primary: #17375E;
+  --navy-dark: #0E233F;
+  --navy-light: #244B7E;
+  --red-accent: #D7473B;
+  --red-hover: #BF3A2F;
+  --red-light-bg: #FFF4F3;
+  --slate-grey: #718198;
+  --grey-light: #F1F5F9;
+  --grey-border: #E2E8F0;
+  --white: #FFFFFF;
+  --bg-light: #F8FAFC;
+  
+  /* MANTRA Exclusive Sub-brand Accent */
+  --gold-mantra: #F59E0B;
+  --gold-bg-glow: rgba(245, 158, 11, 0.15);
+
+  /* Typography */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-serif: 'Lora', serif;
+
+  /* Border Radii */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-card: 22px;
+  --radius-hero: 32px;
+  --radius-pill: 999px;
+
+  /* Elevation Shadows */
+  --shadow-subtle: 0 4px 20px rgba(23, 55, 94, 0.06);
+  --shadow-card: 0 10px 30px rgba(23, 55, 94, 0.08);
+  --shadow-floating: 0 14px 40px rgba(23, 55, 94, 0.14);
+
+  /* Mobile Spacing Grid */
+  --pad-mobile-x: 20px;
+  --section-space: 64px;
+}
