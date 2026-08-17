@@ -211,7 +211,7 @@ export default function MantraPage({ onBack, onOpenEnquire }) {
         </div>
       </section>
 
-      {/* NEW SECTION: Numerical Insights (Animated Bar Chart 2017 to 2024) */}
+      {/* Numerical Insights (Animated Bar Chart 2017 to 2024 - White Cap Line Removed) */}
       <section className="section-wrapper bg-navy mantra-insights-section" ref={chartRef}>
         <div className="section-header-block text-center">
           <div className="pill-label dark-theme">
@@ -247,9 +247,7 @@ export default function MantraPage({ onBack, onOpenEnquire }) {
                       height: animateChart ? `${item.heightPct}%` : '0%',
                       transitionDelay: `${idx * 0.12}s`,
                     }}
-                  >
-                    <div className="bar-top-glow"></div>
-                  </div>
+                  />
                 </div>
 
                 {/* Year Label below bar */}

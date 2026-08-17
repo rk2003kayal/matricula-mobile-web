@@ -1,0 +1,308 @@
+.about-page-view {
+  min-height: 100vh;
+  background-color: var(--white);
+  width: 100%;
+}
+
+.about-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--white);
+  border-bottom: 1px solid rgba(23, 55, 94, 0.08);
+  box-shadow: 0 2px 12px rgba(23, 55, 94, 0.04);
+  width: 100%;
+}
+
+.about-header-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  height: 60px;
+}
+
+.about-header-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: clamp(28px, 6.5vw, 36px);
+  width: auto;
+  object-fit: contain;
+}
+
+.header-spacer-right {
+  width: 38px;
+  height: 38px;
+}
+
+/* 1. Super Compact Hero Header Section */
+.about-hero-section {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.about-hero-section .section-header-block {
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.about-page-title {
+  font-size: clamp(1.6rem, 5vw, 2.1rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-top: 0 !important;
+  margin-bottom: 4px !important;
+}
+
+.mt-8 {
+  margin-top: 4px !important;
+}
+
+.mt-14 {
+  margin-top: 14px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+/* 2. Our Story Section */
+.story-section {
+  padding-top: 36px;
+  padding-bottom: 40px;
+}
+
+.story-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 24px 20px;
+  border: 1.5px solid var(--grey-border);
+  box-shadow: 0 8px 24px rgba(23, 55, 94, 0.05);
+}
+
+.story-text {
+  font-size: 0.94rem;
+  color: var(--navy-primary);
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+/* 3. Matricula Journey / Timeline Section (Exact Landing Page System) */
+.about-timeline-section {
+  padding-top: 48px;
+  padding-bottom: 64px;
+  position: relative;
+}
+
+.timeline-stage-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 32px;
+}
+
+/* Vertical Timeline Line Rail */
+.timeline-rail {
+  position: absolute;
+  top: 20px;
+  bottom: 40px;
+  left: 20px;
+  width: 3.5px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* Animated Scroll Progress Line Fill */
+.timeline-progress-fill {
+  width: 100%;
+  background: linear-gradient(180deg, #F59E0B 0%, #D7473B 50%, #F59E0B 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+  transition: height 0.15s ease-out;
+}
+
+/* Timeline Items List */
+.timeline-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  opacity: 0.45;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.timeline-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Node Circle on the Vertical Rail */
+.timeline-node {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #0E233F;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.node-inner-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Active Glowing Node */
+.timeline-node.active-node {
+  border-color: #F59E0B !important;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.7);
+  transform: scale(1.15);
+}
+
+.timeline-node.active-node .node-inner-dot {
+  background: #F59E0B !important;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.9);
+}
+
+/* Milestone Content Card */
+.timeline-card {
+  margin-left: 52px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  padding: 20px 18px;
+  color: var(--white);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item.in-view .timeline-card {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.year-pill {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 900;
+  color: var(--gold-mantra);
+  background: rgba(245, 158, 11, 0.16);
+  border: 1px solid var(--gold-mantra);
+  padding: 3px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.badge-subtext {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #38BDF8;
+}
+
+.timeline-card-title {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.timeline-card-desc {
+  font-size: 0.86rem;
+  color: #94A3B8;
+  line-height: 1.55;
+}
+
+/* 4. Our Core Team Section */
+.team-section {
+  padding-top: 44px;
+  padding-bottom: 56px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 360px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.team-member-card {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 18px 14px;
+  border: 1.5px solid var(--grey-border);
+  box-shadow: 0 4px 16px rgba(23, 55, 94, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.team-member-card:active {
+  transform: scale(0.98);
+}
+
+.team-avatar-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(23, 55, 94, 0.08);
+  border: 1.5px solid var(--navy-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+  margin-bottom: 10px;
+}
+
+.member-name {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.member-role {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--red-accent);
+  line-height: 1.3;
+}

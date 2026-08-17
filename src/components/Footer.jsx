@@ -15,13 +15,10 @@ export default function Footer() {
           {/* Column 1 — Matricula Branding */}
           <div className="footer-col col-brand">
             <img 
-              src="/matricula-logo.png" 
+              src="/footer-logo.png" 
               alt="Matricula Education" 
               className="footer-logo-img"
             />
-            <p className="footer-brand-statement font-serif-tagline">
-              "No talent lies Latent"
-            </p>
 
             <div className="footer-social-bar">
               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="social-icon-btn yt">
@@ -43,7 +40,7 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-col-title">Important Links</h4>
             <ul className="footer-links-list">
-              <li><a href="#about">About Us</a></li>
+              <li><a href="/about-us">About Us</a></li>
               <li><a href="#jee-neet">Offline Centre</a></li>
               <li><a href="#mock-test">Matricula Mock Test</a></li>
               <li><a href="#visionaries">Team Behind the Success</a></li>
@@ -59,7 +56,7 @@ export default function Footer() {
               <li><a href="#about">Topper's Cheat Sheet</a></li>
               <li><a href="/mantra">MANTRA 2026</a></li>
               <li><a href="#mock-test">Matricula Test Series</a></li>
-              <li><a href="#about">Spoken English</a></li>
+              <li><a href="/spoken-english">Spoken English</a></li>
             </ul>
           </div>
 
@@ -67,10 +64,10 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-col-title">Company</h4>
             <ul className="footer-links-list">
-              <li><a href="#privacy">Privacy Policy</a></li>
-              <li><a href="#refund">Refund Policy</a></li>
-              <li><a href="#terms">Terms & Conditions</a></li>
-              <li><a href="#careers">Work with us</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/refund-policy">Refund Policy</a></li>
+              <li><a href="/terms-and-conditions">Terms & Conditions</a></li>
+              <li><a href="/careers">Work with us</a></li>
             </ul>
           </div>
 

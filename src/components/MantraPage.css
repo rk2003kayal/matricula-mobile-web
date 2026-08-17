@@ -299,16 +299,6 @@
   position: relative;
 }
 
-.bar-top-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: #FFFFFF;
-  box-shadow: 0 0 6px #F59E0B;
-}
-
 .chart-year-label {
   font-family: var(--font-heading);
   font-size: 0.65rem;

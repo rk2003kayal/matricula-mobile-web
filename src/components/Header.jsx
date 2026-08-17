@@ -6,7 +6,7 @@ export default function Header({ onOpenEnquire, onNavigate }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'About Matricula', href: '#about' },
+    { label: 'About Matricula', href: '/about-us', isRoute: true },
     { label: 'JEE / NEET Coaching', href: '#jee-neet' },
     { label: 'MANTRA 2026 Exam', href: '/mantra', isRoute: true },
     { label: 'Student Voices', href: '#testimonials' },
@@ -127,7 +127,7 @@ export default function Header({ onOpenEnquire, onNavigate }) {
 
               <div className="contact-quick-info">
                 <PhoneCall size={16} color="#D7473B" />
-                <span>Call Us: +91 98765 43210</span>
+                <span>Call Us: +91 81004 82638</span>
               </div>
             </div>
           </div>

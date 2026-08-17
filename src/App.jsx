@@ -15,6 +15,12 @@ import StickyCta from './components/StickyCta';
 import Footer from './components/Footer';
 import TeachersModal from './components/TeachersModal';
 import MantraPage from './components/MantraPage';
+import TermsPage from './components/TermsPage';
+import RefundPage from './components/RefundPage';
+import PrivacyPage from './components/PrivacyPage';
+import CareersPage from './components/CareersPage';
+import AboutPage from './components/AboutPage';
+import SpokenEnglishPage from './components/SpokenEnglishPage';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -64,6 +70,12 @@ export default function App() {
 
   const isTeachersOpen = currentPath === '/mentors';
   const isMantraPage = currentPath === '/mantra';
+  const isTermsPage = currentPath === '/terms-and-conditions';
+  const isRefundPage = currentPath === '/refund-policy';
+  const isPrivacyPage = currentPath === '/privacy-policy';
+  const isCareersPage = currentPath === '/careers';
+  const isAboutPage = currentPath === '/about-us';
+  const isSpokenEnglishPage = currentPath === '/spoken-english';
 
   // Dedicated /mantra Webpage View
   if (isMantraPage) {
@@ -78,6 +90,114 @@ export default function App() {
           isOpen={isEnquireOpen} 
           onClose={() => setIsEnquireOpen(false)} 
           initialIntent="MANTRA 2026 Registration"
+        />
+      </div>
+    );
+  }
+
+  // Dedicated /terms-and-conditions Webpage View
+  if (isTermsPage) {
+    return (
+      <div className="mobile-app-viewport">
+        <TermsPage 
+          onBack={handleBackToHome}
+          onOpenEnquire={handleOpenEnquire}
+        />
+
+        <EnquireModal 
+          isOpen={isEnquireOpen} 
+          onClose={() => setIsEnquireOpen(false)} 
+          initialIntent="General Enquiry"
+        />
+      </div>
+    );
+  }
+
+  // Dedicated /refund-policy Webpage View
+  if (isRefundPage) {
+    return (
+      <div className="mobile-app-viewport">
+        <RefundPage 
+          onBack={handleBackToHome}
+          onOpenEnquire={handleOpenEnquire}
+        />
+
+        <EnquireModal 
+          isOpen={isEnquireOpen} 
+          onClose={() => setIsEnquireOpen(false)} 
+          initialIntent="Refund & Cancellation Enquiry"
+        />
+      </div>
+    );
+  }
+
+  // Dedicated /privacy-policy Webpage View
+  if (isPrivacyPage) {
+    return (
+      <div className="mobile-app-viewport">
+        <PrivacyPage 
+          onBack={handleBackToHome}
+          onOpenEnquire={handleOpenEnquire}
+        />
+
+        <EnquireModal 
+          isOpen={isEnquireOpen} 
+          onClose={() => setIsEnquireOpen(false)} 
+          initialIntent="Privacy Policy Enquiry"
+        />
+      </div>
+    );
+  }
+
+  // Dedicated /careers Webpage View
+  if (isCareersPage) {
+    return (
+      <div className="mobile-app-viewport">
+        <CareersPage 
+          onBack={handleBackToHome}
+          onOpenEnquire={handleOpenEnquire}
+        />
+
+        <EnquireModal 
+          isOpen={isEnquireOpen} 
+          onClose={() => setIsEnquireOpen(false)} 
+          initialIntent="Job Application Enquiry"
+        />
+      </div>
+    );
+  }
+
+  // Dedicated /about-us Webpage View
+  if (isAboutPage) {
+    return (
+      <div className="mobile-app-viewport">
+        <AboutPage 
+          onBack={handleBackToHome}
+          onOpenEnquire={handleOpenEnquire}
+        />
+
+        <EnquireModal 
+          isOpen={isEnquireOpen} 
+          onClose={() => setIsEnquireOpen(false)} 
+          initialIntent="About Matricula Enquiry"
+        />
+      </div>
+    );
+  }
+
+  // Dedicated /spoken-english Webpage View
+  if (isSpokenEnglishPage) {
+    return (
+      <div className="mobile-app-viewport">
+        <SpokenEnglishPage 
+          onBack={handleBackToHome}
+          onOpenEnquire={handleOpenEnquire}
+        />
+
+        <EnquireModal 
+          isOpen={isEnquireOpen} 
+          onClose={() => setIsEnquireOpen(false)} 
+          initialIntent="Spoken English Enquiry"
         />
       </div>
     );

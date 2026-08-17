@@ -25,27 +25,29 @@
 .footer-col {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
+.col-brand {
+  align-items: flex-start;
+}
+
+/* Left-aligned logo with subtle 8px border radius & padding */
 .footer-logo-img {
-  height: 36px;
+  height: 48px;
   width: auto;
-  margin-bottom: 8px;
-  filter: brightness(0) invert(1);
+  object-fit: contain;
+  border-radius: 8px !important;
   display: block;
-}
-
-.footer-brand-statement {
-  font-size: 1rem;
-  color: var(--red-accent);
-  margin-bottom: 14px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 .footer-social-bar {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .social-icon-btn {

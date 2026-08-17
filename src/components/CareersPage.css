@@ -1,0 +1,215 @@
+.careers-page-view {
+  min-height: 100vh;
+  background-color: var(--white);
+  width: 100%;
+}
+
+.careers-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--white);
+  border-bottom: 1px solid rgba(23, 55, 94, 0.08);
+  box-shadow: 0 2px 12px rgba(23, 55, 94, 0.04);
+  width: 100%;
+}
+
+.careers-header-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  height: 60px;
+}
+
+.careers-header-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: clamp(28px, 6.5vw, 36px);
+  width: auto;
+  object-fit: contain;
+}
+
+.header-spacer-right {
+  width: 38px;
+  height: 38px;
+}
+
+/* Super Compact Hero Header Section */
+.careers-hero-section {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.careers-hero-section .section-header-block {
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.careers-page-title {
+  font-size: clamp(1.6rem, 5vw, 2.1rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-top: 0 !important;
+  margin-bottom: 4px !important;
+}
+
+.mt-8 {
+  margin-top: 4px !important;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-28 {
+  margin-top: 28px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.careers-content-section {
+  padding-top: 24px;
+  padding-bottom: 56px;
+}
+
+.careers-container {
+  width: 100%;
+}
+
+.careers-section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.positions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.position-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 20px 16px;
+  border: 1.5px solid var(--grey-border);
+  box-shadow: 0 4px 16px rgba(23, 55, 94, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.position-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.position-badge {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--red-accent);
+  background: rgba(215, 71, 59, 0.08);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.position-type {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--slate-grey);
+}
+
+.position-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+  margin-bottom: 6px;
+}
+
+.position-desc {
+  font-size: 0.86rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* Clean White Application Submission Box matching Contact Support Layout */
+.careers-apply-box {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 24px 18px;
+  border: 1.5px solid var(--grey-border);
+  box-shadow: 0 8px 24px rgba(23, 55, 94, 0.05);
+}
+
+.apply-box-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.apply-subtitle {
+  font-size: 0.9rem;
+  color: var(--slate-grey);
+  line-height: 1.5;
+}
+
+.apply-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.apply-item-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(23, 55, 94, 0.03);
+  border: 1px solid rgba(23, 55, 94, 0.1);
+  padding: 12px 14px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.apply-item-card:hover, .apply-item-card:active {
+  border-color: var(--red-accent);
+  background: rgba(215, 71, 59, 0.04);
+}
+
+.apply-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.red-icon-box {
+  background: rgba(215, 71, 59, 0.08);
+  border: 1px solid rgba(215, 71, 59, 0.2);
+}
+
+.blue-icon-box {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.apply-item-val {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+}
