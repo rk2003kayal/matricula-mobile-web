@@ -1,0 +1,123 @@
+.mock-test-section {
+  position: relative;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.mock-test-container {
+  width: 100%;
+}
+
+.mock-card-hero {
+  background: var(--white);
+  border: 1.5px solid var(--grey-border);
+  border-radius: 24px;
+  padding: 22px 18px;
+  box-shadow: 0 10px 30px rgba(23, 55, 94, 0.08);
+}
+
+.mock-badge-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.mock-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(215, 71, 59, 0.08);
+  color: var(--red-accent);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(215, 71, 59, 0.2);
+}
+
+.mock-classes-pill {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  background: var(--bg-light);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--grey-border);
+}
+
+.mock-features-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.mock-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.mock-icon-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--bg-light);
+  border: 1px solid var(--grey-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mock-feature-text {
+  flex: 1;
+}
+
+.mock-feature-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+  margin-bottom: 2px;
+}
+
+.mock-feature-desc {
+  font-size: 0.82rem;
+  color: var(--slate-grey);
+  line-height: 1.4;
+}
+
+.mock-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--grey-border);
+  margin-bottom: 20px;
+}
+
+.mock-check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy-primary);
+}
+
+.mock-cta-wrapper {
+  width: 100%;
+}
+
+.mock-cta-btn {
+  font-size: 0.92rem;
+  padding: 14px 20px;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(215, 71, 59, 0.25);
+}

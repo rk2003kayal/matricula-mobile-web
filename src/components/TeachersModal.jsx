@@ -65,8 +65,14 @@ export default function TeachersModal({ isOpen, onClose, onOpenEnquire }) {
             <ArrowLeft size={20} color="#17375E" />
             <span>Back to Home</span>
           </button>
-          <img src="/matricula-logo.png" alt="Matricula Logo" className="teachers-logo" />
-          <button className="close-modal-btn" onClick={onClose}>
+          <img 
+            src="/matricula-logo.png" 
+            alt="Matricula Logo" 
+            className="teachers-logo" 
+            onClick={onClose}
+            style={{ cursor: 'pointer' }}
+          />
+          <button className="close-modal-btn" onClick={onClose} aria-label="Close">
             <X size={20} color="#17375E" />
           </button>
         </div>

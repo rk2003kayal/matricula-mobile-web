@@ -2,23 +2,50 @@ import React, { useState } from 'react';
 import { Menu, X, ArrowRight, PhoneCall } from 'lucide-react';
 import './Header.css';
 
-export default function Header({ onOpenEnquire }) {
+export default function Header({ onOpenEnquire, onNavigate }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
     { label: 'About Matricula', href: '#about' },
     { label: 'JEE / NEET Coaching', href: '#jee-neet' },
-    { label: 'MANTRA Exam', href: '#mantra' },
+    { label: 'MANTRA 2026 Exam', href: '/mantra', isRoute: true },
     { label: 'Student Voices', href: '#testimonials' },
+    { label: 'Matricula Mock Test', href: '#mock-test' },
     { label: 'Founders & Vision', href: '#visionaries' },
+    { label: 'Our Teachers & Mentors', href: '/mentors', isRoute: true },
     { label: 'FAQs', href: '#faq' },
   ];
 
-  const handleNavClick = (href) => {
+  const handleNavClick = (link) => {
     setMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (link.isRoute) {
+      if (onNavigate) {
+        onNavigate(link.href);
+      }
+    } else {
+      if (window.location.pathname !== '/') {
+        if (onNavigate) {
+          onNavigate('/');
+        }
+        setTimeout(() => {
+          const element = document.querySelector(link.href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const element = document.querySelector(link.href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate('/');
     }
   };
 
@@ -26,7 +53,12 @@ export default function Header({ onOpenEnquire }) {
     <>
       <header className="mobile-header sticky-top">
         <div className="header-container">
-          <a href="#" className="header-logo-link" aria-label="Matricula Education Home">
+          <a 
+            href="/" 
+            className="header-logo-link" 
+            aria-label="Matricula Education Home"
+            onClick={handleLogoClick}
+          >
             <img 
               src="/matricula-logo.png" 
               alt="Matricula Education - no talent lies latent" 
@@ -73,7 +105,7 @@ export default function Header({ onOpenEnquire }) {
                   className="nav-menu-item"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavClick(link.href);
+                    handleNavClick(link);
                   }}
                 >
                   <span>{link.label}</span>

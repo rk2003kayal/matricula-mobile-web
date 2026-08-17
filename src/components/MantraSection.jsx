@@ -1,11 +1,11 @@
 import React from 'react';
-import { Trophy, Gift, Target, Award, Rocket, ExternalLink, Star, Sparkles } from 'lucide-react';
+import { Trophy, Gift, Target, Award, Rocket, Star, Sparkles, ExternalLink } from 'lucide-react';
 import './MantraSection.css';
 
-export default function MantraSection() {
+export default function MantraSection({ onOpenEnquire, onNavigate }) {
   const appLink = "https://play.google.com/store/apps/details?id=co.barney.qiilc&pcampaignid=web_share";
 
-  // 5 Features with ONLY Icons & Titles (ISRO card styled aspirational)
+  // 5 Features with Icons & Titles (ISRO card styled aspirational)
   const mantraFeatures = [
     {
       icon: <Trophy size={28} color="#F59E0B" />,
@@ -24,6 +24,14 @@ export default function MantraSection() {
       title: 'Set your Benchmark',
     },
   ];
+
+  const handleExploreMantra = () => {
+    if (onNavigate) {
+      onNavigate('/mantra');
+    } else if (onOpenEnquire) {
+      onOpenEnquire();
+    }
+  };
 
   return (
     <section id="mantra" className="section-wrapper bg-navy mantra-section">
@@ -65,7 +73,7 @@ export default function MantraSection() {
         ))}
 
         {/* Highly Aspirational ISRO Expedition Feature Card */}
-        <div className="isro-aspirational-card">
+        <div className="isro-aspirational-card" onClick={handleExploreMantra} style={{ cursor: 'pointer' }}>
           <div className="isro-badge-tag">
             <Sparkles size={13} color="#38BDF8" />
             <span>NATIONAL SPACE EXPEDITION</span>
@@ -83,13 +91,13 @@ export default function MantraSection() {
         </div>
       </div>
 
-      {/* Registrations Opening Soon Box with App Download Link */}
+      {/* Registrations Opening Soon Box */}
       <div className="mantra-cta-box">
         <div className="mantra-badge-gold">
           <span>REGISTRATIONS OPENING SOON</span>
         </div>
         <p className="mantra-cta-desc">
-          Download the Matricula App to stay updated & register for MANTRA 2026.
+          Download the App to get more updates on MANTRA
         </p>
         <a 
           href={appLink}
@@ -97,7 +105,7 @@ export default function MantraSection() {
           rel="noopener noreferrer"
           className="btn-primary-red w-full mt-14 btn-gold-shadow mantra-app-btn"
         >
-          <span>Download App to Register</span>
+          <span>Download our App</span>
           <ExternalLink size={18} />
         </a>
       </div>

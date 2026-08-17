@@ -1,63 +1,105 @@
 import React from 'react';
-import { MapPin, Phone, Mail, ChevronRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Youtube, Instagram, Facebook, Send } from 'lucide-react';
 import './Footer.css';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer-section bg-navy">
       <div className="footer-container">
-        {/* Brand Header */}
-        <div className="footer-brand-block">
-          <img 
-            src="/matricula-logo.png" 
-            alt="Matricula Education" 
-            className="footer-logo-img"
-          />
-          <p className="footer-tagline font-serif-tagline">
-            "no talent lies latent"
-          </p>
-          <p className="footer-about-text">
-            Guiding WBBSE & WBCHSE students from Classes 9 to 12 and JEE / NEET aspirants to discover, develop, and demonstrate their full potential.
-          </p>
-        </div>
+        
+        {/* 5-Column Grid Layout */}
+        <div className="footer-5col-grid">
 
-        <div className="footer-divider"></div>
+          {/* Column 1 — Matricula Branding */}
+          <div className="footer-col col-brand">
+            <img 
+              src="/matricula-logo.png" 
+              alt="Matricula Education" 
+              className="footer-logo-img"
+            />
+            <p className="footer-brand-statement font-serif-tagline">
+              "No talent lies Latent"
+            </p>
 
-        {/* Branch Info */}
-        <div className="footer-info-block">
-          <h4 className="footer-col-title">Siliguri Offline Branch</h4>
-          
-          <div className="footer-info-item">
-            <MapPin size={18} color="#D7473B" className="info-icon" />
-            <span>Matricula Campus, Ashram Para, Main Road, Siliguri, West Bengal</span>
+            <div className="footer-social-bar">
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="social-icon-btn yt">
+                <Youtube size={18} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-icon-btn ig">
+                <Instagram size={18} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-icon-btn fb">
+                <Facebook size={18} />
+              </a>
+              <a href="https://t.me" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="social-icon-btn tg">
+                <Send size={18} />
+              </a>
+            </div>
           </div>
 
-          <div className="footer-info-item">
-            <Phone size={18} color="#D7473B" className="info-icon" />
-            <span>+91 98765 43210 / +91 98765 43211</span>
+          {/* Column 2 — Important Links */}
+          <div className="footer-col">
+            <h4 className="footer-col-title">Important Links</h4>
+            <ul className="footer-links-list">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#jee-neet">Offline Centre</a></li>
+              <li><a href="#mock-test">Matricula Mock Test</a></li>
+              <li><a href="#visionaries">Team Behind the Success</a></li>
+              <li><a href="#faq">FAQs</a></li>
+            </ul>
           </div>
 
-          <div className="footer-info-item">
-            <Mail size={18} color="#D7473B" className="info-icon" />
-            <span>info@matriculaeducation.com</span>
+          {/* Column 3 — Our Programs */}
+          <div className="footer-col">
+            <h4 className="footer-col-title">Our Programs</h4>
+            <ul className="footer-links-list">
+              <li><a href="#jee-neet">Batches</a></li>
+              <li><a href="#about">Topper's Cheat Sheet</a></li>
+              <li><a href="/mantra">MANTRA 2026</a></li>
+              <li><a href="#mock-test">Matricula Test Series</a></li>
+              <li><a href="#about">Spoken English</a></li>
+            </ul>
           </div>
+
+          {/* Column 4 — Company */}
+          <div className="footer-col">
+            <h4 className="footer-col-title">Company</h4>
+            <ul className="footer-links-list">
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#refund">Refund Policy</a></li>
+              <li><a href="#terms">Terms & Conditions</a></li>
+              <li><a href="#careers">Work with us</a></li>
+            </ul>
+          </div>
+
+          {/* Column 5 — Contact Us */}
+          <div className="footer-col col-contact">
+            <h4 className="footer-col-title">Contact Us</h4>
+            <ul className="footer-contact-list">
+              <li>
+                <MapPin size={16} color="#D7473B" className="contact-icon" />
+                <span>21, Raja Subodh Chandra Mallick Road, Jadavpur, Kolkata - 700032</span>
+              </li>
+              <li>
+                <Mail size={16} color="#D7473B" className="contact-icon" />
+                <a href="mailto:hey@matricula.co.in">hey@matricula.co.in</a>
+              </li>
+              <li>
+                <Phone size={16} color="#D7473B" className="contact-icon" />
+                <a href="tel:+918100482638">+91 81004 82638</a>
+              </li>
+            </ul>
+          </div>
+
         </div>
 
-        <div className="footer-divider"></div>
-
-        {/* Quick Links */}
-        <div className="footer-links-grid">
-          <a href="#about">About Us</a>
-          <a href="#jee-neet">JEE / NEET Coaching</a>
-          <a href="#mantra">MANTRA Talent Exam</a>
-          <a href="#testimonials">Student Results</a>
-          <a href="#visionaries">Founding Vision</a>
-          <a href="#faq">FAQs</a>
-        </div>
-
+        {/* Footer Bottom Bar */}
         <div className="footer-bottom-bar">
-          <p>© {new Date().getFullYear()} MATRICULA EDUCATION™. All rights reserved.</p>
+          <p>© {currentYear} MATRICULA EDUCATION™. All rights reserved.</p>
         </div>
+
       </div>
     </footer>
   );
