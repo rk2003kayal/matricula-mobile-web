@@ -1,295 +1,332 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowLeft, Trophy, Gift, Target, Award, Rocket, Sparkles, CheckCircle2, ArrowRight, BookOpen, Calendar, ExternalLink, TrendingUp, Users } from 'lucide-react';
+import { 
+  ArrowLeft, Home, Trophy, Gift, Calendar, CheckCircle2, ChevronRight, Rocket, Star, Sparkles, Flame, ShieldAlert, Award
+} from 'lucide-react';
 import Footer from './Footer';
 import './MantraPage.css';
 
-export default function MantraPage({ onBack, onOpenEnquire }) {
-  const appLink = "https://play.google.com/store/apps/details?id=co.barney.qiilc&pcampaignid=web_share";
-  const [animateChart, setAnimateChart] = useState(false);
+export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
+  const [activeFaq, setActiveFaq] = useState(null);
+  const [chartVisible, setChartVisible] = useState(false);
   const chartRef = useRef(null);
 
-  const rewards = [
-    {
-      icon: <Trophy size={32} color="#F59E0B" />,
-      title: 'Upto 100% Scholarship',
-      desc: 'Get full tuition waivers on WBBSE, WBCHSE, JEE & NEET coaching programs.',
-    },
-    {
-      icon: <Gift size={32} color="#F59E0B" />,
-      title: 'Cash Prizes & Laptops/Tablets',
-      desc: 'Top rankers win cash awards, tablets, and academic gadgets.',
-    },
-    {
-      icon: <Rocket size={32} color="#38BDF8" />,
-      title: 'Opportunity to Visit ISRO',
-      desc: 'All-expenses-paid educational expedition to India’s premier ISRO Space Center.',
-    },
-    {
-      icon: <Target size={32} color="#F59E0B" />,
-      title: 'Competitive Exam Foundation',
-      desc: 'Early benchmarking for Olympiads, NTSE, Board exams, JEE & NEET.',
-    },
+  // Student Participation Growth Data (2017 to 2024)
+  const growthData = [
+    { year: '2017', students: 12000, displayVal: '12,000' },
+    { year: '2018', students: 34000, displayVal: '34,000' },
+    { year: '2019', students: 120000, displayVal: '1,20,000' },
+    { year: '2020', students: 185000, displayVal: '1,85,000' },
+    { year: '2021', students: 250000, displayVal: '2,50,000' },
+    { year: '2022', students: 410000, displayVal: '4,10,000' },
+    { year: '2023', students: 535000, displayVal: '5,35,000' },
+    { year: '2024', students: 627456, displayVal: '6,27,456' },
   ];
 
-  const eligibilityClasses = [
-    { level: 'Classes 4 – 5', focus: 'Primary Logic & Mathematics' },
-    { level: 'Classes 6 – 8', focus: 'Foundation Science & Reasoning' },
-    { level: 'Classes 9 – 10', focus: 'WBBSE / CBSE Science & Math' },
-    { level: 'Class 11 – 12', focus: 'WBCHSE / JEE / NEET Specialization' },
-  ];
+  const maxVal = 627456;
 
-  // Numerical Insights Data (2017 to 2024)
-  const chartData = [
-    { year: '2017', val: 12000, label: '12,000', shortVal: '12K', heightPct: 18 },
-    { year: '2018', val: 34000, label: '34,000', shortVal: '34K', heightPct: 26 },
-    { year: '2019', val: 40987, label: '40,987', shortVal: '41K', heightPct: 32 },
-    { year: '2020', val: 45321, label: '45,321', shortVal: '45K', heightPct: 38 },
-    { year: '2021', val: 57632, label: '57,632', shortVal: '58K', heightPct: 48 },
-    { year: '2022', val: 112561, label: '1,12,561', shortVal: '1.12L', heightPct: 62 },
-    { year: '2023', val: 278960, label: '2,78,960', shortVal: '2.78L', heightPct: 80 },
-    { year: '2024', val: 627456, label: '6,27,456', shortVal: '6.27L', heightPct: 100 },
-  ];
-
-  // Trigger bar growth animation when scrolled into chart section
+  // Intersection observer for chart scroll animation
   useEffect(() => {
-    const handleScroll = () => {
-      if (!chartRef.current) return;
-      const rect = chartRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      if (rect.top < windowHeight * 0.8) {
-        setAnimateChart(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setChartVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (chartRef.current) {
+      observer.observe(chartRef.current);
+    }
+
+    return () => {
+      if (chartRef.current) {
+        observer.unobserve(chartRef.current);
       }
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const features = [
+    {
+      title: 'Upto 100% Scholarships',
+      desc: 'Top rankers win full tuition waivers for JEE, NEET & WBBSE Foundation courses.',
+      icon: <Trophy size={26} color="#F59E0B" />,
+    },
+    {
+      title: 'ISRO Space Expedition',
+      desc: 'State Toppers get an all-expense-paid educational visit to ISRO Satellite Centre!',
+      icon: <Rocket size={26} color="#38BDF8" />,
+      spotlight: true,
+    },
+    {
+      title: 'Cash Rewards & Medals',
+      desc: 'Recognizing academic excellence with cash prizes, trophies & certificates.',
+      icon: <Gift size={26} color="#D7473B" />,
+    },
+    {
+      title: 'Statewide Benchmark Rank',
+      desc: 'Compare your performance among 6,00,000+ students across West Bengal.',
+      icon: <Star size={26} color="#F59E0B" />,
+    },
+    {
+      title: 'Free Diagnostic Analysis',
+      desc: 'Detailed subject-wise strength & weakness report powered by Matricula AI.',
+      icon: <Award size={26} color="#17375E" />,
+    },
+  ];
+
+  const eligibilityList = [
+    'Students currently studying in Class 4 to Class 12',
+    'Medium: Bengali, English & Hindi Medium Students',
+    'Boards: WBBSE, WBCHSE, CBSE & ICSE Boards',
+    'Stream (Class 11-12): Science (PCM / PCB / PCMB)',
+  ];
+
+  const faqs = [
+    {
+      q: 'What is MANTRA 2026 Exam?',
+      a: 'MANTRA is West Bengal\'s largest premier scholarship & talent search exam organized by Matricula Education to identify, reward, and guide meritorious students with up to 100% scholarships, cash prizes, and ISRO Space Expedition tours.',
+    },
+    {
+      q: 'Who can apply for MANTRA 2026?',
+      a: 'Students studying in Class 4 to 12 across WBBSE, WBCHSE, CBSE, and ICSE boards are eligible to register.',
+    },
+    {
+      q: 'What is the syllabus for the exam?',
+      a: 'The syllabus covers Science, Mathematics, Mental Ability, and Logical Reasoning based on the candidate\'s current class curriculum.',
+    },
+    {
+      q: 'How will top rankers be selected for the ISRO Tour?',
+      a: 'State top rankers across categories are evaluated based on total score, speed, and final interview by Matricula Academic Board.',
+    },
+  ];
 
   return (
     <div className="mantra-page-view animate-fadeIn">
-      {/* Top Header Matching Website UI */}
+      {/* Top Header Navigation */}
       <header className="mantra-header sticky-top">
         <div className="mantra-header-container">
-          <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back to Home">
-            <ArrowLeft size={22} color="#17375E" />
-          </button>
+          <div className="header-left-actions">
+            <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back">
+              <ArrowLeft size={20} color="#17375E" />
+            </button>
+            <button className="home-circle-btn" onClick={onGoHome} aria-label="Go to Home" title="Home">
+              <Home size={18} color="#17375E" />
+            </button>
+          </div>
           
           <img 
             src="/matricula-logo.png" 
             alt="Matricula Logo" 
             className="mantra-header-logo" 
-            onClick={onBack}
+            onClick={onGoHome}
             style={{ cursor: 'pointer' }}
           />
 
-          <button 
-            className="btn-primary-red header-cta-btn"
-            onClick={onOpenEnquire}
-          >
-            <span>Register Now</span>
-            <ArrowRight size={16} />
+          <button className="btn-primary-red header-cta-btn" onClick={onOpenEnquire}>
+            <span>Enquire Now</span>
           </button>
         </div>
       </header>
 
       {/* Hero Banner Section */}
-      <section className="section-wrapper bg-navy mantra-page-hero">
-        <div className="mantra-hero-gold-glow"></div>
-        <div className="section-header-block">
-          <div className="pill-label dark-theme">
-            <Sparkles size={12} color="#F59E0B" fill="#F59E0B" />
-            MATRICULA ACADEMIC TALENT SEARCH EXAM 2026
+      <section className="section-wrapper bg-navy mantra-hero-section">
+        <div className="mantra-hero-content text-center">
+          <div className="mantra-badge-gold animate-bounce-subtle">
+            <Flame size={14} color="#17375E" fill="#17375E" />
+            <span>MANTRA 2026 — REGISTRATIONS OPEN</span>
           </div>
 
-          <h1 className="mantra-brand-title">
-            <span className="mantra-man">MAN</span>
-            <span className="mantra-tra">TRA</span>
-            <span className="mantra-year">2026</span>
+          <h1 className="mantra-main-title text-white mt-12">
+            West Bengal’s Premier<br />
+            <span className="text-gold">Scholarship & Talent Exam</span>
           </h1>
 
-          <h2 className="mantra-page-tagline">
-            Unlocking Potential.<br />
-            <span className="text-gold">Rewarding Excellence.</span>
-          </h2>
-
-          <p className="section-subtitle text-slate mt-14">
-            The premier talent recognition exam for students from <strong className="text-white">Classes 4 to 12</strong> across West Bengal.
+          <p className="mantra-tagline text-slate mt-12">
+            "no talent lies latent" — Unlock Up to 100% Scholarships, Cash Awards, & an exclusive Educational Visit to ISRO Satellite Centre!
           </p>
 
-          <div className="mantra-hero-cta">
-            <button 
-              className="btn-primary-red btn-gold-shadow"
-              onClick={onOpenEnquire}
-            >
+          {/* Quick Stat Pill Grid */}
+          <div className="mantra-hero-stats-grid mt-20">
+            <div className="mantra-stat-pill">
+              <span className="pill-val">6.27L+</span>
+              <span className="pill-lbl">Aspirants</span>
+            </div>
+            <div className="mantra-stat-pill">
+              <span className="pill-val">100%</span>
+              <span className="pill-lbl">Scholarships</span>
+            </div>
+            <div className="mantra-stat-pill">
+              <span className="pill-val">ISRO</span>
+              <span className="pill-lbl">Space Tour</span>
+            </div>
+          </div>
+
+          {/* Primary CTA */}
+          <div className="mantra-hero-cta-block mt-24">
+            <button className="btn-gold-mantra hero-register-btn" onClick={onOpenEnquire}>
               <span>Register for MANTRA 2026</span>
-              <ArrowRight size={18} />
+              <ChevronRight size={18} />
             </button>
           </div>
         </div>
       </section>
 
-      {/* Why Appear for MANTRA 2026 Rewards Section */}
-      <section className="section-wrapper bg-light mantra-rewards-section">
-        <div className="section-header-block">
+      {/* Features Grid Section (Grouped 5 Cards Seamlessly) */}
+      <section className="section-wrapper bg-white mantra-features-section">
+        <div className="section-header-block text-center">
           <div className="pill-label">
-            <span className="dot-red"></span>
-            BENEFITS & REWARDS
+            <Trophy size={12} color="#D7473B" />
+            EXAM HIGHLIGHTS
           </div>
+
           <h2 className="section-heading-large">
-            Why Take the<br />
-            <span className="text-red">MANTRA Challenge?</span>
+            Why Every Student Must<br />
+            <span className="text-red">Appear for MANTRA 2026</span>
           </h2>
         </div>
 
-        <div className="mantra-rewards-grid">
-          {rewards.map((r, idx) => (
-            <div key={idx} className="mantra-reward-card card-base">
-              <div className="reward-icon-box">
-                {r.icon}
+        {/* 2-Column Responsive Grid without vertical gaps */}
+        <div className="mantra-grid-container mt-20">
+          {features.map((feat, idx) => (
+            <div 
+              key={idx} 
+              className={`mantra-feature-card card-base ${feat.spotlight ? 'spotlight-cyan-card' : ''}`}
+            >
+              <div className="feat-icon-badge">
+                {feat.icon}
               </div>
-              <h3 className="reward-title">{r.title}</h3>
-              <p className="reward-desc">{r.desc}</p>
+              <h3 className="feat-title">{feat.title}</h3>
+              <p className="feat-desc">{feat.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ISRO National Expedition Featured Banner */}
-      <section className="section-wrapper bg-white isro-spotlight-section">
-        <div className="isro-spotlight-card">
-          <div className="isro-spotlight-badge">
-            <Rocket size={16} color="#38BDF8" />
-            <span>NATIONAL SPACE EXPEDITION</span>
-          </div>
-
-          <h2 className="isro-spotlight-title">
-            Opportunity to Visit ISRO Space Center
-          </h2>
-
-          <p className="isro-spotlight-desc">
-            Top rankers of MANTRA 2026 will be selected for an exclusive educational trip to witness India’s space technologies live at ISRO.
-          </p>
-
-          <div className="isro-highlights-list">
-            <div className="isro-hl-item">
-              <CheckCircle2 size={16} color="#38BDF8" />
-              <span>Full Travel & Stay Sponsored by Matricula</span>
-            </div>
-            <div className="isro-hl-item">
-              <CheckCircle2 size={16} color="#38BDF8" />
-              <span>Guided Tour by Space Scientists & Engineers</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Class-Wise Eligibility & Syllabus Focus */}
+      {/* Eligibility Section */}
       <section className="section-wrapper bg-light mantra-eligibility-section">
         <div className="section-header-block">
           <div className="pill-label">
-            <span className="dot-red"></span>
-            ELIGIBILITY
+            <CheckCircle2 size={12} color="#D7473B" />
+            WHO CAN APPLY?
           </div>
+
           <h2 className="section-heading-large">
-            Classes 4 to 12<br />
-            <span className="text-navy">Streamlined Papers.</span>
+            Eligibility Criteria
           </h2>
         </div>
 
-        <div className="eligibility-grid">
-          {eligibilityClasses.map((item, idx) => (
-            <div key={idx} className="eligibility-card card-base">
-              <div className="eligibility-level-pill">
-                <BookOpen size={14} color="#D7473B" />
-                <span>{item.level}</span>
-              </div>
-              <p className="eligibility-focus">{item.focus}</p>
-            </div>
-          ))}
+        <div className="eligibility-card card-base">
+          <ul className="eligibility-list">
+            {eligibilityList.map((item, idx) => (
+              <li key={idx}>
+                <CheckCircle2 size={18} color="#D7473B" className="check-icon" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* Numerical Insights (Animated Bar Chart 2017 to 2024 - White Cap Line Removed) */}
-      <section className="section-wrapper bg-navy mantra-insights-section" ref={chartRef}>
+      {/* Numerical Insights — Scroll-Triggered Bar Chart */}
+      <section className="section-wrapper bg-navy mantra-chart-section" ref={chartRef}>
         <div className="section-header-block text-center">
           <div className="pill-label dark-theme">
-            <TrendingUp size={12} color="#F59E0B" />
+            <Sparkles size={12} color="#F59E0B" fill="#F59E0B" />
             NUMERICAL INSIGHTS
           </div>
 
           <h2 className="section-heading-large text-white">
-            Student Participation<br />
-            <span className="text-gold">Growth Over Years</span>
+            MANTRA Participation Growth<br />
+            <span className="text-gold">2017 to 2024</span>
           </h2>
 
-          <p className="section-subtitle text-slate mt-12">
-            Over 6.27 Lakh students have appeared for MANTRA from 2017 to 2024.
+          <p className="section-subtitle text-slate mt-8">
+            Empowering students across West Bengal with consistent 50x growth over 7 years.
           </p>
         </div>
 
         {/* Animated Bar Chart Container */}
-        <div className="chart-card-container">
-          <div className="chart-bars-stage">
-            {chartData.map((item, idx) => (
-              <div key={idx} className="chart-bar-column">
-                {/* Number Badge above bar */}
-                <div className="chart-val-tag">
-                  <span>{item.shortVal}</span>
-                </div>
+        <div className="chart-stage-container card-base mt-24">
+          <div className="chart-bars-flex">
+            {growthData.map((item, idx) => {
+              const heightPercent = (item.students / maxVal) * 100;
+              const isHighlight = item.year === '2024';
 
-                {/* Animated Growing Bar Pill */}
-                <div className="chart-bar-track">
-                  <div 
-                    className={`chart-bar-fill ${animateChart ? 'bar-animated' : ''}`}
-                    style={{ 
-                      height: animateChart ? `${item.heightPct}%` : '0%',
-                      transitionDelay: `${idx * 0.12}s`,
-                    }}
-                  />
-                </div>
+              return (
+                <div key={idx} className="chart-bar-column">
+                  <div className="bar-val-label">{item.displayVal}</div>
+                  
+                  <div className="bar-track">
+                    <div 
+                      className={`bar-fill ${isHighlight ? 'fill-gold-active' : ''}`}
+                      style={{ 
+                        height: chartVisible ? `${heightPercent}%` : '0%' 
+                      }}
+                    >
+                    </div>
+                  </div>
 
-                {/* Year Label below bar */}
-                <span className="chart-year-label">{item.year}</span>
-              </div>
-            ))}
+                  <div className="bar-year-tag">{item.year}</div>
+                </div>
+              );
+            })}
           </div>
 
-          {/* Growth Highlight Callout Footer */}
-          <div className="chart-insight-footer">
-            <div className="insight-stat-badge">
-              <Users size={18} color="#F59E0B" />
-              <span><strong>6,27,456+</strong> Students in 2024 (50x Growth Since 2017)</span>
-            </div>
+          <div className="chart-footer-note mt-16 text-center">
+            <p className="text-slate">
+              ⚡ Over <strong>6,27,456 students</strong> appeared in MANTRA 2024 making it West Bengal's largest talent search examination.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Bottom Registration CTA Card with App Link */}
-      <section className="section-wrapper bg-navy mantra-bottom-cta-section">
-        <div className="mantra-bottom-card">
-          <div className="mantra-badge-gold">
-            <Calendar size={14} />
-            <span>REGISTRATIONS OPENING SOON</span>
-          </div>
+      {/* MANTRA FAQ Section */}
+      <section className="section-wrapper bg-light mantra-faq-section">
+        <div className="section-header-block text-center">
+          <h2 className="section-heading-large">
+            Frequently Asked Questions
+          </h2>
+        </div>
 
-          <h3>Ready to Test Your Skill & Win Scholarships?</h3>
-          <p className="mantra-cta-desc">Download the App to get more updates on MANTRA</p>
+        <div className="mantra-faq-list mt-20">
+          {faqs.map((faq, idx) => (
+            <div 
+              key={idx} 
+              className={`mantra-faq-card card-base ${activeFaq === idx ? 'open' : ''}`}
+              onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
+            >
+              <div className="faq-q-row">
+                <h3>{faq.q}</h3>
+                <ChevronRight size={18} className="faq-arrow" />
+              </div>
+              {activeFaq === idx && (
+                <p className="faq-a-text mt-8">{faq.a}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
 
+      {/* Bottom CTA App Download Link */}
+      <section className="section-wrapper bg-navy text-center mantra-bottom-cta">
+        <h2 className="text-white text-2xl font-bold">Ready to Excel in MANTRA 2026?</h2>
+        <p className="text-slate mt-8">Download the App to get more updates on MANTRA</p>
+        
+        <div className="mt-20">
           <a 
-            href={appLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary-red w-full btn-gold-shadow mt-14 mantra-app-btn"
+            href="https://play.google.com/store/apps/details?id=co.barney.qiilc&pcampaignid=web_share" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-gold-mantra inline-flex"
           >
             <span>Download our App</span>
-            <ExternalLink size={18} />
+            <ChevronRight size={18} />
           </a>
         </div>
       </section>
 
-      {/* Dedicated Page Footer */}
+      {/* Global CTA Footer */}
       <Footer />
     </div>
   );

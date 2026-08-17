@@ -1,9 +1,9 @@
 import React from 'react';
-import { ArrowLeft, Briefcase, Mail, Phone, Sparkles } from 'lucide-react';
+import { ArrowLeft, Home, Briefcase, Mail, Phone, Sparkles } from 'lucide-react';
 import Footer from './Footer';
 import './CareersPage.css';
 
-export default function CareersPage({ onBack }) {
+export default function CareersPage({ onBack, onGoHome }) {
   const positions = [
     {
       title: 'Presentation Maker',
@@ -27,18 +27,23 @@ export default function CareersPage({ onBack }) {
 
   return (
     <div className="careers-page-view animate-fadeIn">
-      {/* Top Header with Centered Logo & No Enquire Button */}
+      {/* Top Header with Centered Logo, Back Arrow & Circular Home Button */}
       <header className="careers-header sticky-top">
         <div className="careers-header-container">
-          <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back to Home">
-            <ArrowLeft size={22} color="#17375E" />
-          </button>
+          <div className="header-left-actions">
+            <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back">
+              <ArrowLeft size={20} color="#17375E" />
+            </button>
+            <button className="home-circle-btn" onClick={onGoHome} aria-label="Go to Home" title="Home">
+              <Home size={18} color="#17375E" />
+            </button>
+          </div>
           
           <img 
             src="/matricula-logo.png" 
             alt="Matricula Logo" 
             className="careers-header-logo" 
-            onClick={onBack}
+            onClick={onGoHome}
             style={{ cursor: 'pointer' }}
           />
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import { 
-  ArrowLeft, ArrowRight, MessageSquare, BookOpen, GraduationCap, 
+  ArrowLeft, ArrowRight, Home, MessageSquare, BookOpen, GraduationCap, 
   Briefcase, Sparkles, CheckCircle2, Award, Heart, HelpCircle, Star, Users, User, ShieldCheck
 } from 'lucide-react';
 import Footer from './Footer';
 import './SpokenEnglishPage.css';
 
-export default function SpokenEnglishPage({ onBack, onOpenEnquire }) {
+export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
   const courseOptions = [
     {
       title: 'Spoken English Course (Basic)',
@@ -123,18 +123,23 @@ export default function SpokenEnglishPage({ onBack, onOpenEnquire }) {
 
   return (
     <div className="spoken-page-view animate-fadeIn">
-      {/* Top Header with Centered Logo & No Enquire Button */}
+      {/* Top Header with Centered Logo, Back Arrow & Circular Home Button */}
       <header className="spoken-header sticky-top">
         <div className="spoken-header-container">
-          <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back to Home">
-            <ArrowLeft size={22} color="#17375E" />
-          </button>
+          <div className="header-left-actions">
+            <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back">
+              <ArrowLeft size={20} color="#17375E" />
+            </button>
+            <button className="home-circle-btn" onClick={onGoHome} aria-label="Go to Home" title="Home">
+              <Home size={18} color="#17375E" />
+            </button>
+          </div>
           
           <img 
             src="/matricula-logo.png" 
             alt="Matricula Logo" 
             className="spoken-header-logo" 
-            onClick={onBack}
+            onClick={onGoHome}
             style={{ cursor: 'pointer' }}
           />
 

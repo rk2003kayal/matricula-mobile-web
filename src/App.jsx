@@ -47,6 +47,10 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleGoHome = () => {
+    navigateTo('/');
+  };
+
   const handleBackToHome = () => {
     if (window.history.length > 1) {
       window.history.back();
@@ -83,6 +87,7 @@ export default function App() {
       <div className="mobile-app-viewport">
         <MantraPage 
           onBack={handleBackToHome}
+          onGoHome={handleGoHome}
           onOpenEnquire={handleOpenEnquire}
         />
 
@@ -101,6 +106,7 @@ export default function App() {
       <div className="mobile-app-viewport">
         <TermsPage 
           onBack={handleBackToHome}
+          onGoHome={handleGoHome}
           onOpenEnquire={handleOpenEnquire}
         />
 
@@ -119,6 +125,7 @@ export default function App() {
       <div className="mobile-app-viewport">
         <RefundPage 
           onBack={handleBackToHome}
+          onGoHome={handleGoHome}
           onOpenEnquire={handleOpenEnquire}
         />
 
@@ -137,6 +144,7 @@ export default function App() {
       <div className="mobile-app-viewport">
         <PrivacyPage 
           onBack={handleBackToHome}
+          onGoHome={handleGoHome}
           onOpenEnquire={handleOpenEnquire}
         />
 
@@ -155,6 +163,7 @@ export default function App() {
       <div className="mobile-app-viewport">
         <CareersPage 
           onBack={handleBackToHome}
+          onGoHome={handleGoHome}
           onOpenEnquire={handleOpenEnquire}
         />
 
@@ -173,6 +182,7 @@ export default function App() {
       <div className="mobile-app-viewport">
         <AboutPage 
           onBack={handleBackToHome}
+          onGoHome={handleGoHome}
           onOpenEnquire={handleOpenEnquire}
         />
 
@@ -191,6 +201,7 @@ export default function App() {
       <div className="mobile-app-viewport">
         <SpokenEnglishPage 
           onBack={handleBackToHome}
+          onGoHome={handleGoHome}
           onOpenEnquire={handleOpenEnquire}
         />
 
@@ -247,7 +258,7 @@ export default function App() {
       {/* Footer (Dark Navy) */}
       <Footer />
 
-      {/* Floating Mobile Sticky CTA */}
+      {/* Floating Mobile Sticky CTA with Upward Angular Arrow */}
       <StickyCta onOpenEnquire={handleOpenEnquire} />
 
       {/* Interactive Modals & Sub-pages */}
@@ -266,6 +277,7 @@ export default function App() {
       <TeachersModal
         isOpen={isTeachersOpen}
         onClose={handleBackToHome}
+        onGoHome={handleGoHome}
         onOpenEnquire={handleOpenEnquire}
       />
     </div>

@@ -40,6 +40,7 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-col-title">Important Links</h4>
             <ul className="footer-links-list">
+              <li><a href="/">Home</a></li>
               <li><a href="/about-us">About Us</a></li>
               <li><a href="#jee-neet">Offline Centre</a></li>
               <li><a href="#mock-test">Matricula Mock Test</a></li>

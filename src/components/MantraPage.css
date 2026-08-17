@@ -15,6 +15,7 @@
 }
 
 .mantra-header-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,8 +23,14 @@
   height: 60px;
 }
 
-/* Clean Circular Back Arrow Icon Button */
-.back-arrow-icon-btn {
+.header-left-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.home-circle-btn {
   width: 38px;
   height: 38px;
   border-radius: 50%;
@@ -33,257 +40,265 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  flex-shrink: 0;
-  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(23, 55, 94, 0.05);
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.back-arrow-icon-btn:active {
-  background: var(--grey-border);
-  transform: scale(0.95);
+.home-circle-btn:active {
+  transform: scale(0.94);
+  background: rgba(23, 55, 94, 0.08);
 }
 
 .mantra-header-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   height: clamp(28px, 6.5vw, 36px);
   width: auto;
   object-fit: contain;
 }
 
-.mantra-page-hero {
-  position: relative;
-  padding-top: 48px;
-  padding-bottom: 48px;
-  text-align: center;
-  overflow: hidden;
+.mt-8 {
+  margin-top: 8px;
 }
 
-.mantra-hero-gold-glow {
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, rgba(23, 55, 94, 0) 70%);
-  pointer-events: none;
+.mt-12 {
+  margin-top: 12px;
 }
 
-.mantra-page-tagline {
-  font-size: clamp(1.6rem, 5.5vw, 2.1rem);
-  line-height: 1.2;
-  margin-top: 14px;
-  margin-bottom: 12px;
-  color: var(--white);
-  font-weight: 800;
+.mt-16 {
+  margin-top: 16px;
 }
 
-.mantra-hero-cta {
-  margin-top: 24px;
-}
-
-.text-gold {
-  color: #F59E0B !important;
-}
-
-.text-slate {
-  color: #94A3B8 !important;
-}
-
-.mt-14 {
-  margin-top: 14px;
-}
-
-/* Rewards Grid */
-.mantra-rewards-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
+.mt-20 {
   margin-top: 20px;
 }
 
-.mantra-reward-card {
-  padding: 20px 16px;
-  background: var(--white);
-  border-radius: 20px;
-  border: 1.5px solid var(--grey-border);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.mt-24 {
+  margin-top: 24px;
 }
 
-.reward-icon-box {
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
-  background: rgba(245, 158, 11, 0.1);
-  border: 1px solid rgba(245, 158, 11, 0.25);
+.mantra-hero-section {
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.mantra-badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid var(--gold-mantra);
+  color: var(--gold-mantra);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.mantra-main-title {
+  font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.mantra-tagline {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mantra-hero-stats-grid {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
-}
-
-.reward-title {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--navy-primary);
-  margin-bottom: 6px;
-}
-
-.reward-desc {
-  font-size: 0.85rem;
-  color: var(--slate-grey);
-  line-height: 1.45;
-}
-
-/* ISRO Spotlight Section */
-.isro-spotlight-section {
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
-.isro-spotlight-card {
-  background: linear-gradient(135deg, #0B192C 0%, #17375E 100%);
-  border: 1.5px solid #38BDF8;
-  border-radius: 24px;
-  padding: 24px 18px;
-  color: var(--white);
-  box-shadow: 0 12px 36px rgba(56, 189, 248, 0.25);
-}
-
-.isro-spotlight-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(56, 189, 248, 0.12);
-  color: #38BDF8;
-  font-family: var(--font-heading);
-  font-size: 0.68rem;
-  font-weight: 800;
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  margin-bottom: 14px;
-}
-
-.isro-spotlight-title {
-  font-size: 1.35rem;
-  font-weight: 900;
-  color: var(--white);
-  line-height: 1.25;
-  margin-bottom: 10px;
-}
-
-.isro-spotlight-desc {
-  font-size: 0.88rem;
-  color: #94A3B8;
-  line-height: 1.45;
-  margin-bottom: 18px;
-}
-
-.isro-highlights-list {
-  display: flex;
-  flex-direction: column;
   gap: 10px;
-  padding-top: 14px;
-  border-top: 1px dashed rgba(56, 189, 248, 0.2);
 }
 
-.isro-hl-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: #E2E8F0;
-}
-
-/* Eligibility Grid */
-.eligibility-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.eligibility-card {
-  padding: 16px 12px;
-  background: var(--white);
-  border-radius: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.eligibility-level-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-heading);
-  font-size: 0.72rem;
-  font-weight: 800;
-  color: var(--red-accent);
-  background: rgba(215, 71, 59, 0.08);
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  margin-bottom: 8px;
-}
-
-.eligibility-focus {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--navy-primary);
-  line-height: 1.35;
-}
-
-/* Numerical Insights Section (Animated Bar Chart 2017 to 2024) */
-.mantra-insights-section {
-  padding-top: 48px;
-  padding-bottom: 48px;
-  position: relative;
-}
-
-.chart-card-container {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
-  padding: 24px 12px 20px 12px;
-  margin-top: 24px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-}
-
-.chart-bars-stage {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  height: 200px;
-  padding: 0 4px;
-  margin-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.chart-bar-column {
+.mantra-stat-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 10px 14px;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
+}
+
+.pill-val {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--gold-mantra);
+}
+
+.pill-lbl {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--slate-grey);
+}
+
+.btn-gold-mantra {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: var(--navy-dark);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 900;
+  padding: 14px 22px;
+  border-radius: var(--radius-pill);
+  border: none;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* 5 Grouped Cards Grid in 2 Columns without vertical gap */
+.mantra-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .mantra-grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mantra-feature-card {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 20px 16px;
+  border: 1.5px solid var(--grey-border);
+  box-shadow: 0 4px 16px rgba(23, 55, 94, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.spotlight-cyan-card {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.06) 0%, rgba(255, 255, 255, 1) 100%);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.12);
+}
+
+.feat-icon-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--bg-light);
+  border: 1px solid var(--grey-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.feat-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.feat-desc {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* Eligibility List */
+.eligibility-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 22px 18px;
+  border: 1.5px solid var(--grey-border);
+}
+
+.eligibility-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eligibility-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy-primary);
+  line-height: 1.45;
+}
+
+.check-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Animated Bar Chart Styles */
+.mantra-chart-section {
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+
+.chart-stage-container {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 24px 16px 18px;
+  backdrop-filter: blur(8px);
+}
+
+.chart-bars-flex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 6px;
+  height: 220px;
+  padding-top: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.chart-bar-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100%;
   justify-content: flex-end;
-  gap: 6px;
 }
 
-.chart-val-tag {
-  font-family: var(--font-heading);
+.bar-val-label {
   font-size: 0.62rem;
   font-weight: 800;
-  color: var(--gold-mantra);
-  white-space: nowrap;
+  color: #94A3B8;
+  margin-bottom: 6px;
+  text-align: center;
 }
 
-.chart-bar-track {
+.chart-bar-column:last-child .bar-val-label {
+  color: var(--gold-mantra);
+  font-weight: 900;
+  font-size: 0.68rem;
+}
+
+.bar-track {
   width: 100%;
-  max-width: 22px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.08);
+  max-width: 28px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 8px 8px 0 0;
   display: flex;
   align-items: flex-end;
@@ -291,67 +306,78 @@
   overflow: hidden;
 }
 
-.chart-bar-fill {
+.bar-fill {
   width: 100%;
-  background: linear-gradient(180deg, #F59E0B 0%, #D7473B 50%, #17375E 100%);
+  background: linear-gradient(180deg, #38BDF8 0%, #17375E 100%);
   border-radius: 8px 8px 0 0;
-  transition: height 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: height 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
 }
 
-.chart-year-label {
+.fill-gold-active {
+  background: linear-gradient(180deg, #F59E0B 0%, #D7473B 100%) !important;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.6);
+}
+
+.bar-year-tag {
   font-family: var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #94A3B8;
-  margin-top: 4px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--slate-grey);
+  margin-top: 8px;
 }
 
-.chart-insight-footer {
-  margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+.chart-bar-column:last-child .bar-year-tag {
+  color: var(--gold-mantra);
+  font-weight: 900;
 }
 
-.insight-stat-badge {
+.chart-footer-note p {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* FAQ Cards */
+.mantra-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mantra-faq-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1.5px solid var(--grey-border);
+  cursor: pointer;
+}
+
+.faq-q-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 0.78rem;
-  color: #E2E8F0;
-  text-align: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.insight-stat-badge strong {
-  color: var(--gold-mantra);
-}
-
-/* Bottom CTA Card */
-.mantra-bottom-cta-section {
-  padding-top: 40px;
-  padding-bottom: 48px;
-  text-align: center;
-}
-
-.mantra-bottom-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 24px;
-  padding: 24px 18px;
-}
-
-.mantra-bottom-card h3 {
-  font-size: 1.25rem;
-  color: var(--white);
+.faq-q-row h3 {
+  font-size: 0.95rem;
   font-weight: 800;
-  line-height: 1.3;
-  margin-top: 14px;
-  margin-bottom: 8px;
+  color: var(--navy-primary);
 }
 
-.mantra-bottom-card p {
-  font-size: 0.88rem;
-  color: #94A3B8;
-  line-height: 1.45;
+.faq-arrow {
+  transition: transform 0.2s ease;
+  color: var(--navy-primary);
+  flex-shrink: 0;
+}
+
+.mantra-faq-card.open .faq-arrow {
+  transform: rotate(90deg);
+  color: var(--red-accent);
+}
+
+.faq-a-text {
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.5;
 }

@@ -23,6 +23,32 @@
   height: 60px;
 }
 
+.header-left-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.home-circle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-light);
+  border: 1px solid var(--grey-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(23, 55, 94, 0.05);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.home-circle-btn:active {
+  transform: scale(0.94);
+  background: rgba(23, 55, 94, 0.08);
+}
+
 .about-header-logo {
   position: absolute;
   left: 50%;
@@ -33,7 +59,7 @@
 }
 
 .header-spacer-right {
-  width: 38px;
+  width: 78px;
   height: 38px;
 }
 

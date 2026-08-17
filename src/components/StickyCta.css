@@ -1,48 +1,63 @@
 .sticky-bottom-bar {
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 520px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid var(--grey-border);
-  padding: 10px 14px 12px 14px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(23, 55, 94, 0.1);
+  padding: 10px 14px;
   display: flex;
   align-items: center;
   gap: 10px;
-  z-index: 90;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-}
-
-@media (max-width: 520px) {
-  .sticky-bottom-bar {
-    max-width: 100%;
-  }
+  box-shadow: 0 -4px 20px rgba(23, 55, 94, 0.08);
 }
 
 .sticky-call-btn {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--bg-light);
-  border: 1.5px solid var(--navy-primary);
+  background-color: var(--bg-light);
+  border: 1px solid var(--grey-border);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   text-decoration: none;
+  box-shadow: 0 2px 6px rgba(23, 55, 94, 0.06);
+  transition: transform 0.2s ease;
 }
 
 .sticky-call-btn:active {
-  background: var(--grey-border);
+  transform: scale(0.95);
 }
 
 .sticky-enquire-btn {
   flex: 1;
-  font-size: clamp(0.76rem, 2.5vw, 0.88rem);
-  padding: 10px 14px;
-  min-height: 44px;
-  white-space: nowrap;
+  justify-content: center;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+}
+
+/* Upward Angular Arrow Scroll-to-Top Button */
+.sticky-scroll-top-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--navy-primary);
+  border: 1.5px solid var(--gold-mantra);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(23, 55, 94, 0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.sticky-scroll-top-btn:active {
+  transform: scale(0.92);
+  background-color: var(--navy-dark);
 }

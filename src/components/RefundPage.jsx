@@ -1,23 +1,28 @@
 import React from 'react';
-import { ArrowLeft, Mail, Phone, Clock } from 'lucide-react';
+import { ArrowLeft, Home, Mail, Phone, Clock } from 'lucide-react';
 import Footer from './Footer';
 import './RefundPage.css';
 
-export default function RefundPage({ onBack }) {
+export default function RefundPage({ onBack, onGoHome }) {
   return (
     <div className="refund-page-view animate-fadeIn">
-      {/* Top Header with Centered Logo & No Enquire Button */}
+      {/* Top Header with Centered Logo, Back Arrow & Circular Home Button */}
       <header className="refund-header sticky-top">
         <div className="refund-header-container">
-          <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back to Home">
-            <ArrowLeft size={22} color="#17375E" />
-          </button>
+          <div className="header-left-actions">
+            <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back">
+              <ArrowLeft size={20} color="#17375E" />
+            </button>
+            <button className="home-circle-btn" onClick={onGoHome} aria-label="Go to Home" title="Home">
+              <Home size={18} color="#17375E" />
+            </button>
+          </div>
           
           <img 
             src="/matricula-logo.png" 
             alt="Matricula Logo" 
             className="refund-header-logo" 
-            onClick={onBack}
+            onClick={onGoHome}
             style={{ cursor: 'pointer' }}
           />
 

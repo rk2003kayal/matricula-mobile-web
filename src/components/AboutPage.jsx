@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowLeft, Users, Sparkles, Building2, Cpu, Award, Globe, Video, UserCheck, Calendar } from 'lucide-react';
+import { ArrowLeft, Home, Users, Sparkles, Building2, Cpu, Award, Globe, Video, UserCheck, Calendar } from 'lucide-react';
 import Footer from './Footer';
 import './AboutPage.css';
 
-export default function AboutPage({ onBack }) {
+export default function AboutPage({ onBack, onGoHome }) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeNodes, setActiveNodes] = useState([]);
   const timelineRef = useRef(null);
@@ -68,7 +68,7 @@ export default function AboutPage({ onBack }) {
     { name: 'Shreya Das', role: 'Student Communication Executive', initials: 'SD' },
   ];
 
-  // Scroll Progress Calculation (Matching Landing Page StatsSection logic)
+  // Scroll Progress Calculation
   useEffect(() => {
     const handleScroll = () => {
       if (!timelineRef.current) return;
@@ -99,18 +99,23 @@ export default function AboutPage({ onBack }) {
 
   return (
     <div className="about-page-view animate-fadeIn">
-      {/* Top Header with Centered Logo & No Enquire Button */}
+      {/* Top Header with Centered Logo, Back Arrow & Circular Home Button */}
       <header className="about-header sticky-top">
         <div className="about-header-container">
-          <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back to Home">
-            <ArrowLeft size={22} color="#17375E" />
-          </button>
+          <div className="header-left-actions">
+            <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back">
+              <ArrowLeft size={20} color="#17375E" />
+            </button>
+            <button className="home-circle-btn" onClick={onGoHome} aria-label="Go to Home" title="Home">
+              <Home size={18} color="#17375E" />
+            </button>
+          </div>
           
           <img 
             src="/matricula-logo.png" 
             alt="Matricula Logo" 
             className="about-header-logo" 
-            onClick={onBack}
+            onClick={onGoHome}
             style={{ cursor: 'pointer' }}
           />
 
@@ -153,7 +158,7 @@ export default function AboutPage({ onBack }) {
         </div>
       </section>
 
-      {/* 3. Matricula Journey / Timeline (Matching Landing Page Timeline Structure) */}
+      {/* 3. Matricula Journey / Timeline */}
       <section className="section-wrapper bg-navy about-timeline-section">
         <div className="section-header-block text-center">
           <div className="pill-label dark-theme">
@@ -170,29 +175,23 @@ export default function AboutPage({ onBack }) {
           </p>
         </div>
 
-        {/* Scroll-Driven Animated Timeline Stage (Matching Landing Page) */}
         <div className="timeline-stage-wrapper" ref={timelineRef}>
-          {/* Background Rail Line */}
           <div className="timeline-rail">
-            {/* Animated Scroll Progress Line Fill */}
             <div 
               className="timeline-progress-fill" 
               style={{ height: `${scrollProgress}%` }}
             />
           </div>
 
-          {/* Timeline Milestones List */}
           <div className="timeline-items-list">
             {timelineData.map((item, idx) => {
               const isActive = activeNodes[idx];
               return (
                 <div key={idx} className={`timeline-item ${isActive ? 'in-view' : ''}`}>
-                  {/* Node Circle Indicator */}
                   <div className={`timeline-node ${isActive ? 'active-node' : ''}`}>
                     <div className="node-inner-dot"></div>
                   </div>
 
-                  {/* Milestone Content Card */}
                   <div className="timeline-card card-base">
                     <div className="timeline-card-header">
                       <div className="year-pill">{item.year}</div>

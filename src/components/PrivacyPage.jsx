@@ -1,23 +1,28 @@
 import React from 'react';
-import { ArrowLeft, Mail } from 'lucide-react';
+import { ArrowLeft, Home, Mail } from 'lucide-react';
 import Footer from './Footer';
 import './PrivacyPage.css';
 
-export default function PrivacyPage({ onBack }) {
+export default function PrivacyPage({ onBack, onGoHome }) {
   return (
     <div className="privacy-page-view animate-fadeIn">
-      {/* Top Header with Centered Logo & No Enquire Button */}
+      {/* Top Header with Centered Logo, Back Arrow & Circular Home Button */}
       <header className="privacy-header sticky-top">
         <div className="privacy-header-container">
-          <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back to Home">
-            <ArrowLeft size={22} color="#17375E" />
-          </button>
+          <div className="header-left-actions">
+            <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back">
+              <ArrowLeft size={20} color="#17375E" />
+            </button>
+            <button className="home-circle-btn" onClick={onGoHome} aria-label="Go to Home" title="Home">
+              <Home size={18} color="#17375E" />
+            </button>
+          </div>
           
           <img 
             src="/matricula-logo.png" 
             alt="Matricula Logo" 
             className="privacy-header-logo" 
-            onClick={onBack}
+            onClick={onGoHome}
             style={{ cursor: 'pointer' }}
           />
 
