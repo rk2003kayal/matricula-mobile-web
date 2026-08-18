@@ -1,0 +1,23 @@
+.subpage-bottom-home-btn {
+  position: fixed;
+  right: 16px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy-primary);
+  border: 1.5px solid var(--gold-mantra);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(23, 55, 94, 0.35);
+  z-index: 9999;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.subpage-bottom-home-btn:active {
+  transform: scale(0.92);
+  background: var(--navy-dark);
+}

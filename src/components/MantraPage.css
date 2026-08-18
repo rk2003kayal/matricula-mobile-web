@@ -161,7 +161,14 @@
   text-decoration: none;
 }
 
-/* 5 Grouped Cards Grid in 2 Columns without vertical gap */
+.cta-subtext-note {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* 4 Grouped Cards Grid in 2 Columns without vertical gap */
 .mantra-grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -247,28 +254,32 @@
   margin-top: 2px;
 }
 
-/* Animated Bar Chart Styles */
+/* Animated Bar Chart Styles - Clean White Card Container */
 .mantra-chart-section {
   padding-top: 48px;
   padding-bottom: 56px;
 }
 
 .chart-stage-container {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: #FFFFFF !important;
+  border: 1.5px solid var(--grey-border) !important;
   border-radius: 24px;
-  padding: 24px 16px 18px;
-  backdrop-filter: blur(8px);
+  padding: 24px 10px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
 .chart-bars-flex {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 6px;
-  height: 220px;
+  gap: 4px;
+  height: 210px;
   padding-top: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 4px;
+  padding-right: 4px;
+  border-bottom: 1.5px solid var(--grey-border);
+  width: 100%;
 }
 
 .chart-bar-column {
@@ -278,28 +289,31 @@
   align-items: center;
   height: 100%;
   justify-content: flex-end;
+  min-width: 0;
 }
 
 .bar-val-label {
-  font-size: 0.62rem;
+  font-size: clamp(0.56rem, 2.3vw, 0.72rem);
   font-weight: 800;
-  color: #94A3B8;
+  color: #475569;
   margin-bottom: 6px;
   text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
 }
 
 .chart-bar-column:last-child .bar-val-label {
-  color: var(--gold-mantra);
+  color: #D7473B;
   font-weight: 900;
-  font-size: 0.68rem;
+  font-size: clamp(0.62rem, 2.5vw, 0.78rem);
 }
 
 .bar-track {
   width: 100%;
-  max-width: 28px;
-  height: 140px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 8px 8px 0 0;
+  max-width: 22px;
+  height: 135px;
+  background: rgba(23, 55, 94, 0.06);
+  border-radius: 6px 6px 0 0;
   display: flex;
   align-items: flex-end;
   position: relative;
@@ -309,32 +323,38 @@
 .bar-fill {
   width: 100%;
   background: linear-gradient(180deg, #38BDF8 0%, #17375E 100%);
-  border-radius: 8px 8px 0 0;
+  border-radius: 6px 6px 0 0;
   transition: height 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
 }
 
 .fill-gold-active {
   background: linear-gradient(180deg, #F59E0B 0%, #D7473B 100%) !important;
-  box-shadow: 0 0 16px rgba(245, 158, 11, 0.6);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
 }
 
 .bar-year-tag {
   font-family: var(--font-heading);
-  font-size: 0.74rem;
+  font-size: clamp(0.62rem, 2.4vw, 0.74rem);
   font-weight: 800;
-  color: var(--slate-grey);
+  color: #475569;
   margin-top: 8px;
+  white-space: nowrap;
 }
 
 .chart-bar-column:last-child .bar-year-tag {
-  color: var(--gold-mantra);
+  color: #D7473B;
   font-weight: 900;
 }
 
 .chart-footer-note p {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
+  color: #475569 !important;
   line-height: 1.5;
+}
+
+.chart-footer-note strong {
+  color: var(--navy-primary);
 }
 
 /* FAQ Cards */

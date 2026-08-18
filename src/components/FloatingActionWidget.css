@@ -1,0 +1,38 @@
+.floating-action-circle-btn {
+  position: fixed;
+  right: 16px;
+  bottom: 74px; /* Floating right above the bottom sticky CTA bar */
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--navy-primary);
+  border: 2px solid var(--gold-mantra);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(23, 55, 94, 0.35);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  animation: popIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.floating-action-circle-btn:hover {
+  background: var(--navy-dark);
+  box-shadow: 0 8px 24px rgba(23, 55, 94, 0.45);
+}
+
+.floating-action-circle-btn:active {
+  transform: scale(0.92);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

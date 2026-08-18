@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowLeft, Home, Briefcase, Mail, Phone, Sparkles } from 'lucide-react';
+import { ArrowLeft, Briefcase, Mail, Phone, Sparkles } from 'lucide-react';
 import Footer from './Footer';
+import SubpageHomeWidget from './SubpageHomeWidget';
 import './CareersPage.css';
 
 export default function CareersPage({ onBack, onGoHome }) {
@@ -27,15 +28,12 @@ export default function CareersPage({ onBack, onGoHome }) {
 
   return (
     <div className="careers-page-view animate-fadeIn">
-      {/* Top Header with Centered Logo, Back Arrow & Circular Home Button */}
+      {/* Top Header with Centered Logo & Back Arrow */}
       <header className="careers-header sticky-top">
         <div className="careers-header-container">
           <div className="header-left-actions">
             <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back">
-              <ArrowLeft size={20} color="#17375E" />
-            </button>
-            <button className="home-circle-btn" onClick={onGoHome} aria-label="Go to Home" title="Home">
-              <Home size={18} color="#17375E" />
+              <ArrowLeft size={20} color="#FFFFFF" />
             </button>
           </div>
           
@@ -122,6 +120,9 @@ export default function CareersPage({ onBack, onGoHome }) {
 
       {/* Global CTA Footer */}
       <Footer />
+
+      {/* Floating Bottom Right Home Widget */}
+      <SubpageHomeWidget onGoHome={onGoHome} />
     </div>
   );
 }

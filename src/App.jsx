@@ -258,7 +258,7 @@ export default function App() {
       {/* Footer (Dark Navy) */}
       <Footer />
 
-      {/* Floating Mobile Sticky CTA with Upward Angular Arrow */}
+      {/* Floating Mobile Sticky CTA */}
       <StickyCta onOpenEnquire={handleOpenEnquire} />
 
       {/* Interactive Modals & Sub-pages */}

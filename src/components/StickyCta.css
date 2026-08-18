@@ -40,24 +40,27 @@
   font-size: 0.9rem;
 }
 
-/* Upward Angular Arrow Scroll-to-Top Button */
-.sticky-scroll-top-btn {
-  width: 44px;
-  height: 44px;
+/* Small Gold Floating Scroll-to-Top Button positioned right above the StickyCta bar */
+.float-scroll-top-gold-btn {
+  position: absolute;
+  right: 14px;
+  top: -46px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background-color: var(--navy-primary);
-  border: 1.5px solid var(--gold-mantra);
+  background: #FBBF24;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(23, 55, 94, 0.25);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.45);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  z-index: 1000;
   animation: fadeIn 0.25s ease-out;
 }
 
-.sticky-scroll-top-btn:active {
-  transform: scale(0.92);
-  background-color: var(--navy-dark);
+.float-scroll-top-gold-btn:active {
+  transform: scale(0.90);
+  background: #F59E0B;
 }

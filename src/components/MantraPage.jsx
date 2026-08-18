@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  ArrowLeft, Home, Trophy, Gift, Calendar, CheckCircle2, ChevronRight, Rocket, Star, Sparkles, Flame, ShieldAlert, Award
+  ArrowLeft, Trophy, Gift, Calendar, CheckCircle2, ChevronRight, Rocket, Star, Sparkles, Flame, ShieldAlert, Award
 } from 'lucide-react';
 import Footer from './Footer';
+import SubpageHomeWidget from './SubpageHomeWidget';
 import './MantraPage.css';
 
 export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
@@ -10,16 +11,16 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
   const [chartVisible, setChartVisible] = useState(false);
   const chartRef = useRef(null);
 
-  // Student Participation Growth Data (2017 to 2024)
+  // Student Participation Growth Data (2017 to 2024 with compact K/L values for mobile fit)
   const growthData = [
-    { year: '2017', students: 12000, displayVal: '12,000' },
-    { year: '2018', students: 34000, displayVal: '34,000' },
-    { year: '2019', students: 120000, displayVal: '1,20,000' },
-    { year: '2020', students: 185000, displayVal: '1,85,000' },
-    { year: '2021', students: 250000, displayVal: '2,50,000' },
-    { year: '2022', students: 410000, displayVal: '4,10,000' },
-    { year: '2023', students: 535000, displayVal: '5,35,000' },
-    { year: '2024', students: 627456, displayVal: '6,27,456' },
+    { year: '2017', students: 12000, displayVal: '12K' },
+    { year: '2018', students: 34000, displayVal: '34K' },
+    { year: '2019', students: 120000, displayVal: '1.2L' },
+    { year: '2020', students: 185000, displayVal: '1.85L' },
+    { year: '2021', students: 250000, displayVal: '2.5L' },
+    { year: '2022', students: 410000, displayVal: '4.1L' },
+    { year: '2023', students: 535000, displayVal: '5.35L' },
+    { year: '2024', students: 627456, displayVal: '6.27L' },
   ];
 
   const maxVal = 627456;
@@ -68,18 +69,11 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
       desc: 'Compare your performance among 6,00,000+ students across West Bengal.',
       icon: <Star size={26} color="#F59E0B" />,
     },
-    {
-      title: 'Free Diagnostic Analysis',
-      desc: 'Detailed subject-wise strength & weakness report powered by Matricula AI.',
-      icon: <Award size={26} color="#17375E" />,
-    },
   ];
 
   const eligibilityList = [
-    'Students currently studying in Class 4 to Class 12',
-    'Medium: Bengali, English & Hindi Medium Students',
+    'Students studying from Class 1 to Class 12',
     'Boards: WBBSE, WBCHSE, CBSE & ICSE Boards',
-    'Stream (Class 11-12): Science (PCM / PCB / PCMB)',
   ];
 
   const faqs = [
@@ -89,7 +83,7 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
     },
     {
       q: 'Who can apply for MANTRA 2026?',
-      a: 'Students studying in Class 4 to 12 across WBBSE, WBCHSE, CBSE, and ICSE boards are eligible to register.',
+      a: 'Students studying in Class 1 to 12 across WBBSE, WBCHSE, CBSE, and ICSE boards are eligible to register.',
     },
     {
       q: 'What is the syllabus for the exam?',
@@ -108,10 +102,7 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
         <div className="mantra-header-container">
           <div className="header-left-actions">
             <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back">
-              <ArrowLeft size={20} color="#17375E" />
-            </button>
-            <button className="home-circle-btn" onClick={onGoHome} aria-label="Go to Home" title="Home">
-              <Home size={18} color="#17375E" />
+              <ArrowLeft size={20} color="#FFFFFF" />
             </button>
           </div>
           
@@ -123,9 +114,7 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
             style={{ cursor: 'pointer' }}
           />
 
-          <button className="btn-primary-red header-cta-btn" onClick={onOpenEnquire}>
-            <span>Enquire Now</span>
-          </button>
+          <div className="header-spacer-right"></div>
         </div>
       </header>
 
@@ -134,12 +123,12 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
         <div className="mantra-hero-content text-center">
           <div className="mantra-badge-gold animate-bounce-subtle">
             <Flame size={14} color="#17375E" fill="#17375E" />
-            <span>MANTRA 2026 — REGISTRATIONS OPEN</span>
+            <span>MANTRA 2026 — REGISTRATIONS OPENING SOON</span>
           </div>
 
           <h1 className="mantra-main-title text-white mt-12">
-            West Bengal’s Premier<br />
-            <span className="text-gold">Scholarship & Talent Exam</span>
+            Matricula National Talent<br />
+            <span className="text-gold">Recognition & Analysis Exam</span>
           </h1>
 
           <p className="mantra-tagline text-slate mt-12">
@@ -164,15 +153,21 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
 
           {/* Primary CTA */}
           <div className="mantra-hero-cta-block mt-24">
-            <button className="btn-gold-mantra hero-register-btn" onClick={onOpenEnquire}>
-              <span>Register for MANTRA 2026</span>
+            <a 
+              href="https://play.google.com/store/apps/details?id=co.barney.qiilc&pcampaignid=web_share" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn-gold-mantra hero-register-btn"
+            >
+              <span>Download our App</span>
               <ChevronRight size={18} />
-            </button>
+            </a>
+            <p className="cta-subtext-note mt-8 text-slate">Get prioritized notification on our App</p>
           </div>
         </div>
       </section>
 
-      {/* Features Grid Section (Grouped 5 Cards Seamlessly) */}
+      {/* Features Grid Section (Grouped 4 Cards Seamlessly) */}
       <section className="section-wrapper bg-white mantra-features-section">
         <div className="section-header-block text-center">
           <div className="pill-label">
@@ -328,6 +323,9 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
 
       {/* Global CTA Footer */}
       <Footer />
+
+      {/* Floating Bottom Right Home Widget */}
+      <SubpageHomeWidget onGoHome={onGoHome} />
     </div>
   );
 }

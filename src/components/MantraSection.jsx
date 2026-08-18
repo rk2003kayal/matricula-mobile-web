@@ -1,26 +1,24 @@
 import React from 'react';
-import { Trophy, Gift, Target, Award, Rocket, Star, Sparkles, ExternalLink } from 'lucide-react';
+import { Trophy, Gift, Target, Award, Rocket, Star, Sparkles, ArrowRight } from 'lucide-react';
 import './MantraSection.css';
 
 export default function MantraSection({ onOpenEnquire, onNavigate }) {
-  const appLink = "https://play.google.com/store/apps/details?id=co.barney.qiilc&pcampaignid=web_share";
-
-  // 5 Features with Icons & Titles (ISRO card styled aspirational)
+  // 4 Features with Icons & Titles
   const mantraFeatures = [
     {
-      icon: <Trophy size={28} color="#F59E0B" />,
+      icon: <Trophy size={26} color="#F59E0B" />,
       title: 'Upto 100% Scholarship',
     },
     {
-      icon: <Gift size={28} color="#F59E0B" />,
+      icon: <Gift size={26} color="#F59E0B" />,
       title: 'Cash Prize & Gadgets',
     },
     {
-      icon: <Target size={28} color="#F59E0B" />,
+      icon: <Target size={26} color="#F59E0B" />,
       title: 'Prepare for Competitive Exams',
     },
     {
-      icon: <Award size={28} color="#F59E0B" />,
+      icon: <Award size={26} color="#F59E0B" />,
       title: 'Set your Benchmark',
     },
   ];
@@ -57,7 +55,7 @@ export default function MantraSection({ onOpenEnquire, onNavigate }) {
         </h3>
 
         <p className="section-subtitle text-slate mt-12">
-          The Matricula Academic Talent & Recognition Assessment for <strong className="text-white">Classes 4–12</strong>.
+          Matricula National Talent Recognition & Analysis Exam
         </p>
       </div>
 
@@ -96,18 +94,14 @@ export default function MantraSection({ onOpenEnquire, onNavigate }) {
         <div className="mantra-badge-gold">
           <span>REGISTRATIONS OPENING SOON</span>
         </div>
-        <p className="mantra-cta-desc">
-          Download the App to get more updates on MANTRA
-        </p>
-        <a 
-          href={appLink}
-          target="_blank"
-          rel="noopener noreferrer"
+
+        <button 
+          onClick={handleExploreMantra}
           className="btn-primary-red w-full mt-14 btn-gold-shadow mantra-app-btn"
         >
-          <span>Download our App</span>
-          <ExternalLink size={18} />
-        </a>
+          <span>Click to visit MANTRA</span>
+          <ArrowRight size={18} />
+        </button>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, PhoneCall, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, PhoneCall, ChevronUp } from 'lucide-react';
 import './StickyCta.css';
 
 export default function StickyCta({ onOpenEnquire }) {
@@ -7,7 +7,7 @@ export default function StickyCta({ onOpenEnquire }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 250);
+      setShowScrollTop(window.scrollY > 200);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -22,6 +22,18 @@ export default function StickyCta({ onOpenEnquire }) {
 
   return (
     <div className="sticky-bottom-bar">
+      {/* Small Gold Floating Scroll-to-Top Button above the right corner */}
+      {showScrollTop && (
+        <button 
+          className="float-scroll-top-gold-btn" 
+          onClick={handleScrollToTop}
+          aria-label="Scroll to top"
+          title="Scroll to top"
+        >
+          <ChevronUp size={22} color="#FFFFFF" strokeWidth={3.5} />
+        </button>
+      )}
+
       <a href="tel:+918100482638" className="sticky-call-btn" aria-label="Call Matricula">
         <PhoneCall size={20} color="#17375E" />
       </a>
@@ -30,18 +42,6 @@ export default function StickyCta({ onOpenEnquire }) {
         <span>Enquire Now for Admissions</span>
         <ArrowRight size={18} />
       </button>
-
-      {/* Upward Angular Arrow Scroll-to-Top Button */}
-      {showScrollTop && (
-        <button 
-          className="sticky-scroll-top-btn" 
-          onClick={handleScrollToTop}
-          aria-label="Scroll to top section"
-          title="Scroll to top"
-        >
-          <ArrowUpRight size={20} color="#FFFFFF" />
-        </button>
-      )}
     </div>
   );
 }

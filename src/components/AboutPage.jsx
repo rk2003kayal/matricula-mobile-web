@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowLeft, Home, Users, Sparkles, Building2, Cpu, Award, Globe, Video, UserCheck, Calendar } from 'lucide-react';
+import { ArrowLeft, Users, Sparkles, Building2, Cpu, Award, Globe, Video, UserCheck, Calendar } from 'lucide-react';
 import Footer from './Footer';
+import SubpageHomeWidget from './SubpageHomeWidget';
 import './AboutPage.css';
 
 export default function AboutPage({ onBack, onGoHome }) {
@@ -99,15 +100,12 @@ export default function AboutPage({ onBack, onGoHome }) {
 
   return (
     <div className="about-page-view animate-fadeIn">
-      {/* Top Header with Centered Logo, Back Arrow & Circular Home Button */}
+      {/* Top Header with Centered Logo & Back Arrow */}
       <header className="about-header sticky-top">
         <div className="about-header-container">
           <div className="header-left-actions">
             <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back">
-              <ArrowLeft size={20} color="#17375E" />
-            </button>
-            <button className="home-circle-btn" onClick={onGoHome} aria-label="Go to Home" title="Home">
-              <Home size={18} color="#17375E" />
+              <ArrowLeft size={20} color="#FFFFFF" />
             </button>
           </div>
           
@@ -236,6 +234,9 @@ export default function AboutPage({ onBack, onGoHome }) {
 
       {/* Global CTA Footer */}
       <Footer />
+
+      {/* Floating Bottom Right Home Widget */}
+      <SubpageHomeWidget onGoHome={onGoHome} />
     </div>
   );
 }

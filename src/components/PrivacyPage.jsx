@@ -1,20 +1,18 @@
 import React from 'react';
-import { ArrowLeft, Home, Mail } from 'lucide-react';
+import { ArrowLeft, Mail } from 'lucide-react';
 import Footer from './Footer';
+import SubpageHomeWidget from './SubpageHomeWidget';
 import './PrivacyPage.css';
 
 export default function PrivacyPage({ onBack, onGoHome }) {
   return (
     <div className="privacy-page-view animate-fadeIn">
-      {/* Top Header with Centered Logo, Back Arrow & Circular Home Button */}
+      {/* Top Header with Centered Logo & Back Arrow */}
       <header className="privacy-header sticky-top">
         <div className="privacy-header-container">
           <div className="header-left-actions">
             <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back">
-              <ArrowLeft size={20} color="#17375E" />
-            </button>
-            <button className="home-circle-btn" onClick={onGoHome} aria-label="Go to Home" title="Home">
-              <Home size={18} color="#17375E" />
+              <ArrowLeft size={20} color="#FFFFFF" />
             </button>
           </div>
           
@@ -168,6 +166,9 @@ export default function PrivacyPage({ onBack, onGoHome }) {
 
       {/* Global CTA Footer */}
       <Footer />
+
+      {/* Floating Bottom Right Home Widget */}
+      <SubpageHomeWidget onGoHome={onGoHome} />
     </div>
   );
 }

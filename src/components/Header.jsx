@@ -67,13 +67,6 @@ export default function Header({ onOpenEnquire, onNavigate }) {
           </a>
 
           <div className="header-actions">
-            <button 
-              className="btn-primary-red header-cta-btn"
-              onClick={onOpenEnquire}
-            >
-              <span>Enquire Now</span>
-              <ArrowRight size={16} />
-            </button>
 
             <button 
               className="hamburger-btn"

@@ -1,9 +1,10 @@
 import React from 'react';
 import { 
-  ArrowLeft, ArrowRight, Home, MessageSquare, BookOpen, GraduationCap, 
+  ArrowLeft, ArrowRight, MessageSquare, BookOpen, GraduationCap, 
   Briefcase, Sparkles, CheckCircle2, Award, Heart, HelpCircle, Star, Users, User, ShieldCheck
 } from 'lucide-react';
 import Footer from './Footer';
+import SubpageHomeWidget from './SubpageHomeWidget';
 import './SpokenEnglishPage.css';
 
 export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
@@ -27,7 +28,7 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
       desc: 'Master corporate English, advanced vocabulary, spontaneous debating, professional presentations, and leadership speech.',
     },
     {
-      title: 'Spoken English for IELTS, EFL & Job Interviews',
+      title: 'Spoken English Course for IELTS, EFL & Job Interviews',
       bannerImg: '/spoken-ielts-banner.png',
       badge: 'CAREER & TEST PREP',
       desc: 'Targeted preparation for HR job interviews, IELTS Speaking module, corporate meetings, and global career opportunities.',
@@ -123,15 +124,12 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
 
   return (
     <div className="spoken-page-view animate-fadeIn">
-      {/* Top Header with Centered Logo, Back Arrow & Circular Home Button */}
+      {/* Top Header with Centered Logo & Back Arrow */}
       <header className="spoken-header sticky-top">
         <div className="spoken-header-container">
           <div className="header-left-actions">
             <button className="back-arrow-icon-btn" onClick={onBack} aria-label="Back">
-              <ArrowLeft size={20} color="#17375E" />
-            </button>
-            <button className="home-circle-btn" onClick={onGoHome} aria-label="Go to Home" title="Home">
-              <Home size={18} color="#17375E" />
+              <ArrowLeft size={20} color="#FFFFFF" />
             </button>
           </div>
           
@@ -315,6 +313,9 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
 
       {/* Global CTA Footer */}
       <Footer />
+
+      {/* Floating Bottom Right Home Widget */}
+      <SubpageHomeWidget onGoHome={onGoHome} />
     </div>
   );
 }

@@ -210,3 +210,33 @@ h1, h2, h3, h4, h5, h6 {
 .animate-float-1 { animation: floatGentle 4s ease-in-out infinite; }
 .animate-float-2 { animation: floatGentle 4.5s ease-in-out infinite 0.5s; }
 .animate-float-3 { animation: floatGentle 5s ease-in-out infinite 1s; }
+
+/* Circular Blue Back Arrow Button for All Sub-page Headers */
+.back-arrow-icon-btn,
+.back-arrow-btn {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background-color: var(--navy-primary) !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(23, 55, 94, 0.25) !important;
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
+  flex-shrink: 0 !important;
+  padding: 0 !important;
+}
+
+.back-arrow-icon-btn:active,
+.back-arrow-btn:active {
+  transform: scale(0.92) !important;
+  background-color: var(--navy-dark) !important;
+}
+
+.back-arrow-icon-btn svg,
+.back-arrow-btn svg {
+  stroke: #FFFFFF !important;
+  color: #FFFFFF !important;
+}
