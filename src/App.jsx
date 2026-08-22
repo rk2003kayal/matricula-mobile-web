@@ -21,6 +21,7 @@ import PrivacyPage from './components/PrivacyPage';
 import CareersPage from './components/CareersPage';
 import AboutPage from './components/AboutPage';
 import SpokenEnglishPage from './components/SpokenEnglishPage';
+import OnlineBatchesPage from './components/OnlineBatchesPage';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -37,6 +38,32 @@ export default function App() {
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  // Scroll-triggered IntersectionObserver for smooth upward fade-in animations
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.08,
+    };
+
+    const handleIntersect = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    const elements = document.querySelectorAll('.reveal-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, [currentPath]);
 
   // Programmatic client-side navigation handler
   const navigateTo = (path) => {
@@ -80,6 +107,26 @@ export default function App() {
   const isCareersPage = currentPath === '/careers';
   const isAboutPage = currentPath === '/about-us';
   const isSpokenEnglishPage = currentPath === '/spoken-english';
+  const isOnlineBatchesPage = currentPath === '/online-batches';
+
+  // Dedicated /online-batches Webpage View
+  if (isOnlineBatchesPage) {
+    return (
+      <div className="mobile-app-viewport">
+        <OnlineBatchesPage 
+          onBack={handleBackToHome}
+          onGoHome={handleGoHome}
+          onOpenEnquire={handleOpenEnquire}
+        />
+
+        <EnquireModal 
+          isOpen={isEnquireOpen} 
+          onClose={() => setIsEnquireOpen(false)} 
+          initialIntent="WB Board Online Batches Enquiry"
+        />
+      </div>
+    );
+  }
 
   // Dedicated /mantra Webpage View
   if (isMantraPage) {

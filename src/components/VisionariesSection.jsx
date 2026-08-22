@@ -45,7 +45,7 @@ export default function VisionariesSection({ onOpenTeachers }) {
 
   return (
     <section id="visionaries" className="section-wrapper bg-light visionaries-section">
-      <div className="section-header-block">
+      <div className="section-header-block reveal-on-scroll">
         {/* Animated Capsule: turns Deep Navy Blue with White Text on Activation */}
         <div 
           ref={capsuleRef}
@@ -67,7 +67,7 @@ export default function VisionariesSection({ onOpenTeachers }) {
       </div>
 
       {/* 2 Side-by-Side Visionaries Cards */}
-      <div className="visionaries-2col-grid">
+      <div className="visionaries-2col-grid reveal-on-scroll">
         {visionaries.map((v, idx) => (
           <div key={idx} className="visionary-card card-base">
             <div className="visionary-portrait-badge" style={{ backgroundColor: v.bgColor }}>
@@ -88,12 +88,12 @@ export default function VisionariesSection({ onOpenTeachers }) {
       </div>
 
       {/* Tagline Callout */}
-      <div className="vision-tagline-bar">
+      <div className="vision-tagline-bar reveal-on-scroll">
         <span className="font-serif-tagline">"no talent lies latent"</span>
       </div>
 
       {/* Button to Open Dedicated Teachers Webpage View */}
-      <div className="see-teachers-cta-wrapper">
+      <div className="see-teachers-cta-wrapper reveal-on-scroll">
         <button className="btn-primary-red w-full see-teachers-btn" onClick={onOpenTeachers}>
           <Users size={18} />
           <span>See our Most Dedicated Teachers</span>

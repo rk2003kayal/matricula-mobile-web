@@ -28,7 +28,7 @@ export default function AboutSection({ onOpenEnquire }) {
 
   return (
     <section id="about" className="section-wrapper bg-white about-section">
-      <div className="section-header-block">
+      <div className="section-header-block reveal-on-scroll">
         <div className="pill-label">
           <span className="dot-red"></span>
           ABOUT MATRICULA
@@ -49,7 +49,7 @@ export default function AboutSection({ onOpenEnquire }) {
       </div>
 
       {/* 4 Cards Grid - Equal Width, Equi-Spaced, Level Dashes */}
-      <div className="class-cards-grid">
+      <div className="class-cards-grid reveal-on-scroll">
         {classCards.map((card, idx) => (
           <div key={idx} className="class-card">
             <div className="class-card-header">
@@ -66,7 +66,7 @@ export default function AboutSection({ onOpenEnquire }) {
       </div>
 
       {/* Banner Box: Logo Removed, "Join Your Class" + Red Triangle Play Arrow */}
-      <div className="philosophy-callout-box" onClick={onOpenEnquire}>
+      <div className="philosophy-callout-box reveal-on-scroll" onClick={onOpenEnquire}>
         <span className="join-class-label">
           Join Your Class
         </span>

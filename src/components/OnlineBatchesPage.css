@@ -1,10 +1,10 @@
-.spoken-page-view {
+.online-batches-page-view {
   min-height: 100vh;
   background-color: var(--white);
   width: 100%;
 }
 
-.spoken-header {
+.online-header {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -14,7 +14,7 @@
   width: 100%;
 }
 
-.spoken-header-container {
+.online-header-container {
   position: relative;
   display: flex;
   align-items: center;
@@ -30,26 +30,7 @@
   z-index: 10;
 }
 
-.home-circle-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--bg-light);
-  border: 1px solid var(--grey-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(23, 55, 94, 0.05);
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.home-circle-btn:active {
-  transform: scale(0.94);
-  background: rgba(23, 55, 94, 0.08);
-}
-
-.spoken-header-logo {
+.online-header-logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -59,110 +40,80 @@
 }
 
 .header-spacer-right {
-  width: 78px;
-  height: 38px;
+  width: 38px;
 }
 
-.mt-10 {
-  margin-top: 10px;
+.online-hero-section {
+  padding-top: 40px;
+  padding-bottom: 48px;
 }
 
-.mt-12 {
-  margin-top: 12px;
+.hero-tag-pill {
+  margin-bottom: 8px;
 }
 
-.mt-16 {
-  margin-top: 16px;
-}
-
-.mt-18 {
-  margin-top: 18px;
-}
-
-.mt-20 {
-  margin-top: 20px;
-}
-
-.mt-24 {
-  margin-top: 24px;
-}
-
-.mt-32 {
-  margin-top: 32px;
-}
-
-/* 1. Hero Section / Introduction */
-.spoken-hero-section {
-  padding-top: 36px;
-  padding-bottom: 44px;
-}
-
-.spoken-hero-headline {
-  font-size: clamp(1.5rem, 5.5vw, 2.2rem);
+.online-hero-headline {
+  font-size: clamp(1.5rem, 5.2vw, 2.1rem);
   font-weight: 900;
   line-height: 1.25;
-  letter-spacing: -0.01em;
 }
 
 .hero-intro-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 20px;
-  padding: 20px 18px;
-  backdrop-filter: blur(8px);
+  background: var(--white);
+  border-radius: 24px;
+  padding: 24px 18px;
+  border: 1px solid var(--grey-border);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
 }
 
 .hero-subtext {
-  font-size: 0.92rem;
-  color: var(--white);
+  font-size: 0.95rem;
+  color: var(--navy-primary);
   line-height: 1.6;
 }
 
+.hero-subtext strong {
+  color: var(--red-accent);
+}
+
 .hero-tagline-text {
-  font-size: 1rem;
+  font-size: 0.92rem;
   font-weight: 800;
 }
 
 .hero-enroll-btn {
   width: 100%;
-  justify-content: center;
   padding: 14px 20px;
+  font-size: 1rem;
 }
 
-/* 2. Course Section */
+/* Course / Batches Section */
 .courses-section {
-  padding-top: 40px;
-  padding-bottom: 48px;
+  padding-top: 48px;
+  padding-bottom: 56px;
 }
 
 .courses-grid {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .course-card {
+  overflow: hidden;
   background: var(--white);
   border-radius: 20px;
-  overflow: hidden;
-  padding: 0 !important;
   border: 1.5px solid var(--grey-border);
-  box-shadow: 0 8px 24px rgba(23, 55, 94, 0.06);
-  display: flex;
-  flex-direction: column;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.course-card:active {
-  border-color: var(--red-accent);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(23, 55, 94, 0.05);
+  padding: 0;
 }
 
 .course-banner-container {
   width: 100%;
   aspect-ratio: 16 / 9.5;
   overflow: hidden;
-  background: #0E233F;
+  background: var(--navy-dark);
 }
 
 .course-banner-img {
@@ -174,32 +125,31 @@
 
 .course-card-content {
   padding: 20px 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .course-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 10px;
 }
 
 .course-badge {
-  font-family: var(--font-heading);
   font-size: 0.68rem;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--red-accent);
   background: rgba(215, 71, 59, 0.08);
-  border: 1px solid rgba(215, 71, 59, 0.2);
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: var(--radius-pill);
+  letter-spacing: 0.06em;
 }
 
 .course-title {
   font-size: 1.15rem;
   font-weight: 800;
   color: var(--navy-primary);
-  margin-bottom: 8px;
   line-height: 1.3;
+  margin-bottom: 8px;
 }
 
 .course-desc {
@@ -208,45 +158,28 @@
   line-height: 1.55;
 }
 
-.btn-secondary-outline {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+.course-book-btn {
   width: 100%;
-  padding: 12px 16px;
-  border-radius: var(--radius-pill);
-  border: 1.5px solid var(--navy-primary);
-  background: transparent;
+  justify-content: center;
+  border-color: var(--navy-primary);
   color: var(--navy-primary);
-  font-family: var(--font-heading);
-  font-size: 0.86rem;
-  font-weight: 800;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  font-weight: 700;
 }
 
-.btn-secondary-outline:hover, .btn-secondary-outline:active {
-  background: var(--navy-primary);
-  color: var(--white);
+.course-book-btn:active {
+  background: rgba(23, 55, 94, 0.05);
 }
 
-/* 3. Who is this course for? (Audience Grid) */
+/* Target Audience Grid */
 .audience-section {
-  padding-top: 40px;
-  padding-bottom: 48px;
+  padding-top: 48px;
+  padding-bottom: 56px;
 }
 
 .audience-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-@media (max-width: 360px) {
-  .audience-grid {
-    grid-template-columns: 1fr;
-  }
+  gap: 14px;
 }
 
 .audience-card {
@@ -273,22 +206,22 @@
 }
 
 .audience-role-title {
-  font-size: 0.96rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: var(--navy-primary);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .audience-desc {
-  font-size: 0.78rem;
-  color: #64748B;
+  font-size: 0.8rem;
+  color: #475569;
   line-height: 1.45;
 }
 
-/* 4. The learning story begins here */
+/* Methodology Section */
 .learning-story-section {
-  padding-top: 44px;
-  padding-bottom: 52px;
+  padding-top: 48px;
+  padding-bottom: 56px;
 }
 
 .story-features-grid {
@@ -298,40 +231,38 @@
 }
 
 .story-feature-card {
-  background: var(--white) !important;
-  border: 1.5px solid var(--grey-border) !important;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 18px;
   padding: 18px 16px;
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(8px);
 }
 
 .feature-check-icon {
-  margin-top: 2px;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .feature-title {
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 800;
-  color: var(--navy-primary) !important;
+  color: var(--white);
   margin-bottom: 4px;
-  line-height: 1.35;
 }
 
 .feature-desc {
-  font-size: 0.88rem;
-  color: #475569 !important;
-  line-height: 1.55;
-  font-weight: 500;
+  font-size: 0.84rem;
+  color: #94A3B8;
+  line-height: 1.5;
 }
 
-/* 5. Why are thousands of students choosing Matricula? */
+/* Why Choose Section */
 .why-choose-section {
-  padding-top: 40px;
-  padding-bottom: 56px;
+  padding-top: 48px;
+  padding-bottom: 64px;
 }
 
 .why-grid {
@@ -343,33 +274,32 @@
 .why-card {
   background: var(--white);
   border-radius: 16px;
-  padding: 16px;
+  padding: 16px 14px;
   border: 1.5px solid var(--grey-border);
-  box-shadow: 0 4px 16px rgba(23, 55, 94, 0.04);
   display: flex;
   align-items: flex-start;
   gap: 12px;
 }
 
 .why-star-icon {
-  margin-top: 2px;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .why-title {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 800;
   color: var(--navy-primary);
   margin-bottom: 2px;
 }
 
 .why-desc {
-  font-size: 0.82rem;
-  color: #64748B;
+  font-size: 0.8rem;
+  color: #475569;
   line-height: 1.45;
 }
 
-.spoken-bottom-cta-box {
+.online-bottom-cta-box {
   background: linear-gradient(135deg, #091325 0%, #17375E 60%, #0D284B 100%) !important;
   border: 1.5px solid rgba(245, 158, 11, 0.4) !important;
   border-radius: 24px;
@@ -380,7 +310,7 @@
   overflow: hidden;
 }
 
-.spoken-bottom-cta-box .cta-headline {
+.online-bottom-cta-box .cta-headline {
   font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 900;
@@ -389,17 +319,17 @@
   margin-bottom: 8px;
 }
 
-.spoken-bottom-cta-box .cta-subtext {
+.online-bottom-cta-box .cta-subtext {
   font-size: 0.88rem;
   color: #94A3B8 !important;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 
-.spoken-bottom-cta-box .cta-action-btn {
+.online-bottom-cta-box .cta-action-btn {
   width: 100%;
   justify-content: center;
-  padding: 14px 20px;
+  font-size: 1rem;
   font-weight: 800;
   box-shadow: 0 4px 20px rgba(215, 71, 59, 0.4);
 }

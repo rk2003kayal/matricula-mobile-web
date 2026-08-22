@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="footer-container">
         
         {/* 5-Column Grid Layout */}
-        <div className="footer-5col-grid">
+        <div className="footer-5col-grid reveal-on-scroll">
 
           {/* Column 1 — Matricula Branding */}
           <div className="footer-col col-brand">
@@ -53,7 +53,7 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-col-title">Our Programs</h4>
             <ul className="footer-links-list">
-              <li><a href="#jee-neet">Batches</a></li>
+              <li><a href="/online-batches">Online Batches</a></li>
               <li><a href="#about">Topper's Cheat Sheet</a></li>
               <li><a href="/mantra">MANTRA 2026</a></li>
               <li><a href="#mock-test">Matricula Test Series</a></li>

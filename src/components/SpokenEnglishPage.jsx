@@ -147,7 +147,7 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
 
       {/* 1. Hero Section / Introduction */}
       <section className="section-wrapper bg-navy spoken-hero-section">
-        <div className="spoken-hero-content text-center">
+        <div className="spoken-hero-content text-center reveal-on-scroll">
           <div className="pill-label dark-theme hero-tag-pill">
             <MessageSquare size={12} color="#F59E0B" fill="#F59E0B" />
             SPOKEN ENGLISH WITH PURBALI MA'AM
@@ -178,7 +178,7 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
 
       {/* 2. Course Section */}
       <section className="section-wrapper bg-light courses-section">
-        <div className="section-header-block text-center">
+        <div className="section-header-block text-center reveal-on-scroll">
           <div className="pill-label">
             <BookOpen size={12} color="#D7473B" />
             CHOOSE YOUR COURSE
@@ -189,7 +189,7 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
           </h2>
         </div>
 
-        <div className="courses-grid mt-24">
+        <div className="courses-grid mt-24 reveal-on-scroll">
           {courseOptions.map((course, idx) => (
             <div key={idx} className="course-card card-base">
               {/* Course Banner Image */}
@@ -217,7 +217,7 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
 
       {/* 3. Who is this course for? */}
       <section className="section-wrapper bg-white audience-section">
-        <div className="section-header-block text-center">
+        <div className="section-header-block text-center reveal-on-scroll">
           <div className="pill-label">
             <Users size={12} color="#D7473B" />
             TARGET AUDIENCE
@@ -228,7 +228,7 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
           </h2>
         </div>
 
-        <div className="audience-grid mt-24">
+        <div className="audience-grid mt-24 reveal-on-scroll">
           {targetAudience.map((item, idx) => (
             <div key={idx} className="audience-card card-base">
               <div className="audience-icon-box">
@@ -243,7 +243,7 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
 
       {/* 4. The learning story begins here */}
       <section className="section-wrapper bg-navy learning-story-section">
-        <div className="section-header-block text-center">
+        <div className="section-header-block text-center reveal-on-scroll">
           <div className="pill-label dark-theme">
             <Sparkles size={12} color="#F59E0B" fill="#F59E0B" />
             OUR METHODOLOGY
@@ -254,7 +254,7 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
           </h2>
         </div>
 
-        <div className="story-features-grid mt-24">
+        <div className="story-features-grid mt-24 reveal-on-scroll">
           {learningStoryPoints.map((item, idx) => (
             <div key={idx} className="story-feature-card card-base">
               <div className="feature-check-icon">
@@ -271,7 +271,7 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
 
       {/* 5. Why are thousands of students choosing Matricula? */}
       <section className="section-wrapper bg-light why-choose-section">
-        <div className="section-header-block text-center">
+        <div className="section-header-block text-center reveal-on-scroll">
           <div className="pill-label">
             <ShieldCheck size={12} color="#D7473B" />
             TRUSTED BY THOUSANDS
@@ -286,7 +286,7 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
           </p>
         </div>
 
-        <div className="why-grid mt-24">
+        <div className="why-grid mt-24 reveal-on-scroll">
           {whyMatriculaPoints.map((item, idx) => (
             <div key={idx} className="why-card card-base">
               <div className="why-star-icon">
@@ -301,7 +301,7 @@ export default function SpokenEnglishPage({ onBack, onGoHome, onOpenEnquire }) {
         </div>
 
         {/* Bottom Call To Action Banner */}
-        <div className="spoken-bottom-cta-box card-base bg-navy text-center mt-32">
+        <div className="spoken-bottom-cta-box text-center mt-32 reveal-on-scroll">
           <h3 className="cta-headline text-white">Ready to speak English with confidence?</h3>
           <p className="cta-subtext text-slate mt-8">Book your free trial class today with Purbali Ma'am!</p>
           <button className="btn-primary-red cta-action-btn mt-16" onClick={onOpenEnquire}>

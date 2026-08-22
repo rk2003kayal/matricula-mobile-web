@@ -30,7 +30,7 @@ export default function PrivacyPage({ onBack, onGoHome }) {
 
       {/* Compact Hero Banner */}
       <section className="section-wrapper bg-navy privacy-hero-section">
-        <div className="section-header-block text-center">
+        <div className="section-header-block text-center reveal-on-scroll">
           <h1 className="privacy-page-title text-white">
             Privacy Policy
           </h1>
@@ -43,7 +43,7 @@ export default function PrivacyPage({ onBack, onGoHome }) {
 
       {/* Main Document Content Wrapper */}
       <main className="section-wrapper bg-light privacy-content-section">
-        <div className="privacy-card-container card-base">
+        <div className="privacy-card-container card-base reveal-on-scroll">
 
           <div className="privacy-intro-box">
             <p>

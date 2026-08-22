@@ -120,7 +120,7 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
 
       {/* Hero Banner Section */}
       <section className="section-wrapper bg-navy mantra-hero-section">
-        <div className="mantra-hero-content text-center">
+        <div className="mantra-hero-content text-center reveal-on-scroll">
           <div className="mantra-badge-gold animate-bounce-subtle">
             <Flame size={14} color="#17375E" fill="#17375E" />
             <span>MANTRA 2026 — REGISTRATIONS OPENING SOON</span>
@@ -169,7 +169,7 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
 
       {/* Features Grid Section (Grouped 4 Cards Seamlessly) */}
       <section className="section-wrapper bg-white mantra-features-section">
-        <div className="section-header-block text-center">
+        <div className="section-header-block text-center reveal-on-scroll">
           <div className="pill-label">
             <Trophy size={12} color="#D7473B" />
             EXAM HIGHLIGHTS
@@ -182,7 +182,7 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
         </div>
 
         {/* 2-Column Responsive Grid without vertical gaps */}
-        <div className="mantra-grid-container mt-20">
+        <div className="mantra-grid-container mt-20 reveal-on-scroll">
           {features.map((feat, idx) => (
             <div 
               key={idx} 
@@ -200,7 +200,7 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
 
       {/* Eligibility Section */}
       <section className="section-wrapper bg-light mantra-eligibility-section">
-        <div className="section-header-block">
+        <div className="section-header-block reveal-on-scroll">
           <div className="pill-label">
             <CheckCircle2 size={12} color="#D7473B" />
             WHO CAN APPLY?
@@ -211,7 +211,7 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
           </h2>
         </div>
 
-        <div className="eligibility-card card-base">
+        <div className="eligibility-card card-base reveal-on-scroll">
           <ul className="eligibility-list">
             {eligibilityList.map((item, idx) => (
               <li key={idx}>
@@ -225,7 +225,7 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
 
       {/* Numerical Insights — Scroll-Triggered Bar Chart */}
       <section className="section-wrapper bg-navy mantra-chart-section" ref={chartRef}>
-        <div className="section-header-block text-center">
+        <div className="section-header-block text-center reveal-on-scroll">
           <div className="pill-label dark-theme">
             <Sparkles size={12} color="#F59E0B" fill="#F59E0B" />
             NUMERICAL INSIGHTS
@@ -242,7 +242,7 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
         </div>
 
         {/* Animated Bar Chart Container */}
-        <div className="chart-stage-container card-base mt-24">
+        <div className="chart-stage-container card-base mt-24 reveal-on-scroll">
           <div className="chart-bars-flex">
             {growthData.map((item, idx) => {
               const heightPercent = (item.students / maxVal) * 100;
@@ -278,13 +278,13 @@ export default function MantraPage({ onBack, onGoHome, onOpenEnquire }) {
 
       {/* MANTRA FAQ Section */}
       <section className="section-wrapper bg-light mantra-faq-section">
-        <div className="section-header-block text-center">
+        <div className="section-header-block text-center reveal-on-scroll">
           <h2 className="section-heading-large">
             Frequently Asked Questions
           </h2>
         </div>
 
-        <div className="mantra-faq-list mt-20">
+        <div className="mantra-faq-list mt-20 reveal-on-scroll">
           {faqs.map((faq, idx) => (
             <div 
               key={idx} 

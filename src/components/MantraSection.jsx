@@ -36,7 +36,7 @@ export default function MantraSection({ onOpenEnquire, onNavigate }) {
       {/* Background Gold Glow Effect */}
       <div className="mantra-gold-glow"></div>
 
-      <div className="section-header-block">
+      <div className="section-header-block reveal-on-scroll">
         <div className="pill-label dark-theme">
           <Star size={12} color="#F59E0B" fill="#F59E0B" />
           OUR FLAGSHIP EXAM
@@ -60,7 +60,7 @@ export default function MantraSection({ onOpenEnquire, onNavigate }) {
       </div>
 
       {/* 2x2 Feature Cards Grid */}
-      <div className="mantra-features-grid">
+      <div className="mantra-features-grid reveal-on-scroll">
         {mantraFeatures.map((item, idx) => (
           <div key={idx} className="mantra-feature-card">
             <div className="mantra-card-icon-box">
@@ -90,7 +90,7 @@ export default function MantraSection({ onOpenEnquire, onNavigate }) {
       </div>
 
       {/* Registrations Opening Soon Box */}
-      <div className="mantra-cta-box">
+      <div className="mantra-cta-box reveal-on-scroll">
         <div className="mantra-badge-gold">
           <span>REGISTRATIONS OPENING SOON</span>
         </div>

@@ -220,7 +220,7 @@ export default function TestimonialSection() {
 
   return (
     <section id="testimonials" className="section-wrapper bg-white testimonial-section">
-      <div className="section-header-block">
+      <div className="section-header-block reveal-on-scroll">
         <div className="pill-label">
           <span className="dot-red"></span>
           COMMUNITY VOICES
@@ -256,7 +256,7 @@ export default function TestimonialSection() {
       </div>
 
       {/* Auto-Swiping Testimonial Card */}
-      <div className="testimonial-slider-card card-base animate-fadeIn">
+      <div className="testimonial-slider-card card-base reveal-on-scroll">
         <div className="card-top-row">
           <div className="stars-row">
             {[...Array(5)].map((_, i) => (

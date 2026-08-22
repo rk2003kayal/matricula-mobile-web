@@ -30,25 +30,6 @@
   z-index: 10;
 }
 
-.home-circle-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--bg-light);
-  border: 1px solid var(--grey-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(23, 55, 94, 0.05);
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.home-circle-btn:active {
-  transform: scale(0.94);
-  background: rgba(23, 55, 94, 0.08);
-}
-
 .about-header-logo {
   position: absolute;
   left: 50%;
@@ -59,46 +40,89 @@
 }
 
 .header-spacer-right {
-  width: 78px;
+  width: 38px;
   height: 38px;
 }
 
-/* 1. Super Compact Hero Header Section */
+/* 1. Hero Header Section */
 .about-hero-section {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
+  padding-top: 36px;
+  padding-bottom: 44px;
 }
 
-.about-hero-section .section-header-block {
-  margin-bottom: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+.hero-pill {
+  margin-bottom: 12px;
 }
 
-.about-page-title {
-  font-size: clamp(1.6rem, 5vw, 2.1rem);
+.about-hero-headline {
+  font-size: clamp(1.8rem, 5.5vw, 2.4rem);
   font-weight: 900;
-  line-height: 1.15;
-  margin-top: 0 !important;
-  margin-bottom: 4px !important;
+  line-height: 1.18;
 }
 
-.mt-8 {
-  margin-top: 4px !important;
+.about-hero-tagline {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 600;
 }
 
-.mt-14 {
-  margin-top: 14px;
+.hero-team-image-card {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 0 16px 40px rgba(9, 19, 37, 0.4), 0 0 24px rgba(245, 158, 11, 0.15);
+  background: #091325;
 }
 
-.mt-24 {
-  margin-top: 24px;
+.hero-team-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
+
+.hero-team-image-card:hover .hero-team-img {
+  transform: scale(1.02);
+}
+
+.team-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(9, 19, 37, 0.92) 100%);
+  padding: 18px 16px 12px;
+  text-align: center;
+}
+
+.team-photo-caption span {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--gold-mantra);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Utility Margins */
+.mt-4 { margin-top: 4px; }
+.mt-6 { margin-top: 6px; }
+.mt-8 { margin-top: 8px; }
+.mt-10 { margin-top: 10px; }
+.mt-12 { margin-top: 12px; }
+.mt-14 { margin-top: 14px; }
+.mt-16 { margin-top: 16px; }
+.mt-20 { margin-top: 20px; }
+.mt-24 { margin-top: 24px; }
 
 /* 2. Our Story Section */
 .story-section {
-  padding-top: 36px;
-  padding-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 44px;
 }
 
 .story-card {
@@ -116,7 +140,243 @@
   font-weight: 500;
 }
 
-/* 3. Matricula Journey / Timeline Section (Exact Landing Page System) */
+/* 3. Mission & Vision Section */
+.mission-vision-section {
+  padding-top: 44px;
+  padding-bottom: 48px;
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+.mv-card {
+  background: var(--white);
+  border-radius: 22px;
+  padding: 24px 20px;
+  border: 1.5px solid var(--grey-border);
+  box-shadow: 0 8px 24px rgba(23, 55, 94, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(23, 55, 94, 0.08);
+}
+
+.mission-card {
+  border-top: 4px solid var(--red-accent);
+}
+
+.vision-card {
+  border-top: 4px solid var(--navy-primary);
+}
+
+.mv-icon-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.mv-icon-badge.icon-red {
+  background: rgba(215, 71, 59, 0.1);
+}
+
+.mv-icon-badge.icon-navy {
+  background: rgba(23, 55, 94, 0.1);
+}
+
+.mv-card-title {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: var(--navy-primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.mv-card-desc {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* 4. Achievements Section */
+.achievements-section {
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 540px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.achievement-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 20px 18px;
+  border: 1.5px solid var(--grey-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Times of India Prestige Branding Spotlight Card with Prominent Animated Moving Light Streak */
+.toi-spotlight-card {
+  position: relative;
+  background: linear-gradient(145deg, #FFFFFF 0%, #FFFBEB 100%) !important;
+  border-radius: 20px !important;
+  padding: 20px 18px !important;
+  box-shadow: 0 12px 38px rgba(245, 158, 11, 0.45), 0 0 24px rgba(245, 158, 11, 0.25) !important;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+}
+
+/* High-Intensity Rotating Conic Light Streak Beam */
+.toi-spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: conic-gradient(
+    transparent 0%, 
+    transparent 65%, 
+    #F59E0B 78%, 
+    #FFFFFF 88%, 
+    #FF3333 96%, 
+    transparent 100%
+  );
+  filter: drop-shadow(0 0 10px #F59E0B) drop-shadow(0 0 16px #FFFFFF);
+  animation: rotateLightStreak 2.6s linear infinite;
+  z-index: -2;
+}
+
+/* Inner Card Mask Layer with Crisp 3.5px Border Width */
+.toi-spotlight-card::after {
+  content: '';
+  position: absolute;
+  inset: 3.5px;
+  background: linear-gradient(145deg, #FFFFFF 0%, #FFFBEB 100%);
+  border-radius: 16.5px;
+  z-index: -1;
+}
+
+@keyframes rotateLightStreak {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.toi-card-image-wrapper {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.toi-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.toi-icon-box {
+  background: rgba(245, 158, 11, 0.18) !important;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.toi-tag-pill {
+  color: #B45309 !important;
+  background: rgba(245, 158, 11, 0.18) !important;
+  border: 1px solid rgba(245, 158, 11, 0.5) !important;
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+}
+
+.toi-num-title {
+  font-size: 1.45rem !important;
+  font-weight: 900 !important;
+  color: var(--navy-primary) !important;
+}
+
+.achievement-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.achievement-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(23, 55, 94, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-tag-pill {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--red-accent);
+  background: rgba(215, 71, 59, 0.1);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.achievement-num {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--navy-primary);
+  line-height: 1.1;
+}
+
+.achievement-label {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+}
+
+.achievement-desc {
+  font-size: 0.82rem;
+  color: #64748B;
+  line-height: 1.5;
+}
+
+/* 5. Matricula Journey / Timeline Section */
 .about-timeline-section {
   padding-top: 48px;
   padding-bottom: 64px;
@@ -267,7 +527,7 @@
   line-height: 1.55;
 }
 
-/* 4. Our Core Team Section */
+/* 6. Our Core Team Section */
 .team-section {
   padding-top: 44px;
   padding-bottom: 56px;
@@ -331,4 +591,67 @@
   font-weight: 700;
   color: var(--red-accent);
   line-height: 1.3;
+}
+
+/* 7. App Download Section */
+.about-app-download-section {
+  padding-top: 40px;
+  padding-bottom: 64px;
+}
+
+.about-cta-box {
+  background: var(--white);
+  border: 1.5px solid var(--grey-border);
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 12px 36px rgba(23, 55, 94, 0.08);
+  overflow: hidden;
+}
+
+.cta-banner-image-container {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.cta-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: transform 0.3s ease;
+}
+
+.cta-banner-img:hover {
+  transform: scale(1.015);
+}
+
+.cta-content-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-subtext {
+  font-size: 0.9rem;
+  color: var(--navy-primary) !important;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+.cta-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
 }

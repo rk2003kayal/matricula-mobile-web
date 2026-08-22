@@ -39,7 +39,7 @@ export default function FaqSection() {
 
   return (
     <section id="faq" className="section-wrapper bg-white faq-section">
-      <div className="section-header-block">
+      <div className="section-header-block reveal-on-scroll">
         <div className="pill-label">
           <span className="dot-red"></span>
           FREQUENTLY ASKED QUESTIONS
@@ -52,7 +52,7 @@ export default function FaqSection() {
         </h2>
       </div>
 
-      <div className="faq-list">
+      <div className="faq-list reveal-on-scroll">
         {faqs.map((faq, idx) => {
           const isOpen = openIdx === idx;
           return (

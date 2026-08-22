@@ -30,7 +30,7 @@ export default function TermsPage({ onBack, onGoHome }) {
 
       {/* Compact Hero Banner */}
       <section className="section-wrapper bg-navy terms-hero-section">
-        <div className="section-header-block text-center">
+        <div className="section-header-block text-center reveal-on-scroll">
           <h1 className="terms-page-title text-white">
             Terms & Conditions
           </h1>
@@ -43,7 +43,7 @@ export default function TermsPage({ onBack, onGoHome }) {
 
       {/* Main Document Content Wrapper */}
       <main className="section-wrapper bg-light terms-content-section">
-        <div className="terms-card-container card-base">
+        <div className="terms-card-container card-base reveal-on-scroll">
 
           <div className="terms-intro-box">
             <p>

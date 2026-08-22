@@ -60,7 +60,7 @@ export default function TeachersModal({ isOpen, onClose, onGoHome }) {
         
         {/* Hero Header */}
         <section className="section-wrapper bg-navy teachers-hero">
-          <div className="section-header-block text-center">
+          <div className="section-header-block text-center reveal-on-scroll">
             <div className="pill-label dark-theme">
               <Award size={12} color="#F59E0B" fill="#F59E0B" />
               EXPERT FACULTY
@@ -79,7 +79,7 @@ export default function TeachersModal({ isOpen, onClose, onGoHome }) {
 
         {/* Teachers Profile Grid */}
         <section className="section-wrapper bg-light teachers-grid-section">
-          <div className="teachers-grid">
+          <div className="teachers-grid reveal-on-scroll">
             {teachersList.map((teacher, idx) => (
               <div key={idx} className="teacher-card card-base">
                 <div className="teacher-card-top">
@@ -98,7 +98,7 @@ export default function TeachersModal({ isOpen, onClose, onGoHome }) {
         </section>
 
         {/* Join Demo Class Section */}
-        <section className="section-wrapper bg-navy text-center demo-class-section">
+        <section className="section-wrapper bg-navy text-center demo-class-section reveal-on-scroll">
           <h2 className="text-white text-2xl font-bold">
             Attend a DEMO CLASS on our APP
           </h2>

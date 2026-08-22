@@ -30,7 +30,7 @@ export default function RefundPage({ onBack, onGoHome }) {
 
       {/* Compact Hero Banner */}
       <section className="section-wrapper bg-navy refund-hero-section">
-        <div className="section-header-block text-center">
+        <div className="section-header-block text-center reveal-on-scroll">
           <h1 className="refund-page-title text-white">
             Refund & Cancellation Policy
           </h1>
@@ -43,7 +43,7 @@ export default function RefundPage({ onBack, onGoHome }) {
 
       {/* Main Document Content Wrapper */}
       <main className="section-wrapper bg-light refund-content-section">
-        <div className="refund-card-container card-base">
+        <div className="refund-card-container card-base reveal-on-scroll">
 
           <div className="refund-intro-box">
             <p>

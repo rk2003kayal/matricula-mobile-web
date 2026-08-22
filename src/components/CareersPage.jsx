@@ -51,7 +51,7 @@ export default function CareersPage({ onBack, onGoHome }) {
 
       {/* Compact Hero Banner */}
       <section className="section-wrapper bg-navy careers-hero-section">
-        <div className="section-header-block text-center">
+        <div className="section-header-block text-center reveal-on-scroll">
           <h1 className="careers-page-title text-white">
             Work With Us
           </h1>
@@ -66,7 +66,7 @@ export default function CareersPage({ onBack, onGoHome }) {
       <main className="section-wrapper bg-light careers-content-section">
         <div className="careers-container">
           
-          <div className="careers-section-header">
+          <div className="careers-section-header reveal-on-scroll">
             <div className="pill-label">
               <Briefcase size={12} color="#D7473B" />
               WE ARE HIRING
@@ -77,7 +77,7 @@ export default function CareersPage({ onBack, onGoHome }) {
           </div>
 
           {/* Position Cards */}
-          <div className="positions-grid mt-20">
+          <div className="positions-grid mt-20 reveal-on-scroll">
             {positions.map((pos, idx) => (
               <div key={idx} className="position-card card-base">
                 <div className="position-card-header">
@@ -92,7 +92,7 @@ export default function CareersPage({ onBack, onGoHome }) {
           </div>
 
           {/* Application Submission Instructions Box */}
-          <div className="careers-apply-box card-base mt-28">
+          <div className="careers-apply-box card-base mt-28 reveal-on-scroll">
             <div className="apply-box-header">
               <Sparkles size={22} color="#F59E0B" />
               <p className="apply-subtitle">Send your resume & portfolio directly to our HR team:</p>

@@ -1,28 +1,98 @@
 import React, { useState } from 'react';
-import { Menu, X, ArrowRight, PhoneCall } from 'lucide-react';
+import { Menu, X, ArrowRight, PhoneCall, ChevronDown } from 'lucide-react';
 import './Header.css';
 
 export default function Header({ onOpenEnquire, onNavigate }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [expandedParents, setExpandedParents] = useState({});
 
   const navLinks = [
-    { label: 'About Matricula', href: '/about-us', isRoute: true },
-    { label: 'JEE / NEET Coaching', href: '#jee-neet' },
-    { label: 'MANTRA 2026 Exam', href: '/mantra', isRoute: true },
-    { label: 'Student Voices', href: '#testimonials' },
-    { label: 'Matricula Mock Test', href: '#mock-test' },
-    { label: 'Founders & Vision', href: '#visionaries' },
-    { label: 'Our Teachers & Mentors', href: '/mentors', isRoute: true },
-    { label: 'FAQs', href: '#faq' },
+    { 
+      id: 'home', 
+      label: 'HOME', 
+      href: '/' 
+    },
+    { 
+      id: 'about', 
+      label: 'ABOUT US', 
+      href: '/about-us' 
+    },
+    { 
+      id: 'batches', 
+      label: 'BATCHES',
+      subItems: [
+        { label: 'Class 9' },
+        { label: 'Class 10' },
+        { label: 'Class 11' },
+        { label: 'Class 12' },
+        { label: 'JEE/NEET' },
+        { label: 'Spoken English' }
+      ] 
+    },
+    { 
+      id: 'offline-centre', 
+      label: 'OFFLINE CENTRE', 
+      href: '#jee-neet' 
+    },
+    { 
+      id: 'products', 
+      label: 'PRODUCTS',
+      subItems: [
+        { label: 'MANTRA' },
+        { label: 'MTS' }
+      ] 
+    },
+    { 
+      id: 'study-resources', 
+      label: 'STUDY RESOURCES',
+      subItems: [
+        { label: 'Class VI–XII' },
+        { label: 'Summarized Notes' },
+        { label: 'Sample Papers' }
+      ] 
+    },
+    { 
+      id: 'career', 
+      label: 'CAREER',
+      subItems: [
+        { label: 'Career Compass' },
+        { label: 'Opportunities' }
+      ] 
+    },
+    { 
+      id: 'work-with-us', 
+      label: 'WORK WITH US',
+      subItems: [
+        { label: 'Affiliate' },
+        { label: 'Teacher' },
+        { label: 'Presentation Maker' },
+        { label: 'BDE' },
+        { label: 'More Opportunities' }
+      ] 
+    },
+    { 
+      id: 'faq', 
+      label: 'FAQ', 
+      href: '#faq' 
+    },
   ];
+
+  const toggleParent = (id) => {
+    setExpandedParents(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
 
   const handleNavClick = (link) => {
     setMenuOpen(false);
-    if (link.isRoute) {
+    if (!link.href) return;
+
+    if (link.href.startsWith('/')) {
       if (onNavigate) {
         onNavigate(link.href);
       }
-    } else {
+    } else if (link.href.startsWith('#')) {
       if (window.location.pathname !== '/') {
         if (onNavigate) {
           onNavigate('/');
@@ -67,7 +137,6 @@ export default function Header({ onOpenEnquire, onNavigate }) {
           </a>
 
           <div className="header-actions">
-
             <button 
               className="hamburger-btn"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -91,20 +160,54 @@ export default function Header({ onOpenEnquire, onNavigate }) {
             </div>
 
             <nav className="nav-menu-list">
-              {navLinks.map((link, idx) => (
-                <a 
-                  key={idx} 
-                  href={link.href} 
-                  className="nav-menu-item"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(link);
-                  }}
-                >
-                  <span>{link.label}</span>
-                  <ArrowRight size={16} className="nav-item-arrow" />
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const hasSubItems = link.subItems && link.subItems.length > 0;
+                const isExpanded = !!expandedParents[link.id];
+
+                if (hasSubItems) {
+                  return (
+                    <div key={link.id} className="nav-dropdown-group">
+                      <button 
+                        type="button"
+                        className={`nav-menu-parent-item ${isExpanded ? 'open' : ''}`}
+                        onClick={() => toggleParent(link.id)}
+                      >
+                        <span>{link.label}</span>
+                        <ChevronDown 
+                          size={18} 
+                          className={`chevron-toggle-icon ${isExpanded ? 'rotate-180' : ''}`}
+                          color={isExpanded ? "#D7473B" : "#17375E"}
+                        />
+                      </button>
+
+                      {isExpanded && (
+                        <div className="nav-dropdown-submenu">
+                          {link.subItems.map((sub, sIdx) => (
+                            <div key={sIdx} className="nav-sub-item">
+                              <span>{sub.label}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
+                return (
+                  <a 
+                    key={link.id} 
+                    href={link.href || '#'} 
+                    className="nav-menu-item"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(link);
+                    }}
+                  >
+                    <span>{link.label}</span>
+                    <ArrowRight size={16} className="nav-item-arrow" />
+                  </a>
+                );
+              })}
             </nav>
 
             <div className="nav-footer-cta">

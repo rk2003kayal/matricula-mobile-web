@@ -23,7 +23,7 @@ export default function JeeNeetSection() {
 
   return (
     <section id="jee-neet" className="section-wrapper bg-light jee-neet-section">
-      <div className="section-header-block text-left">
+      <div className="section-header-block text-left reveal-on-scroll">
         <div className="pill-label">
           <MapPin size={14} color="#D7473B" />
           OFFLINE CLASSES
@@ -44,7 +44,7 @@ export default function JeeNeetSection() {
       </div>
 
       {/* Building Vector Illustration matching Reference Image 3 */}
-      <div className="building-illustration-container">
+      <div className="building-illustration-container reveal-on-scroll">
         <svg viewBox="0 0 380 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="building-svg">
           {/* Sky background / grid */}
           <rect width="380" height="220" rx="16" fill="#E2E8F0" opacity="0.4" />
@@ -81,7 +81,7 @@ export default function JeeNeetSection() {
       </div>
 
       {/* Integrated Interactive Inquiry Form Card */}
-      <div className="inquiry-form-card card-base">
+      <div className="inquiry-form-card card-base reveal-on-scroll">
         <div className="form-badge-icon">
           <ClipboardList size={22} color="#D7473B" />
         </div>

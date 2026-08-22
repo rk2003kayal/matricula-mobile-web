@@ -25,7 +25,7 @@ export default function MockTestSection({ onOpenEnquire }) {
     <section id="mock-test" className="section-wrapper bg-white mock-test-section">
       <div className="mock-test-container">
         {/* Section Header Block */}
-        <div className="section-header-block">
+        <div className="section-header-block reveal-on-scroll">
           <div className="pill-label">
             <span className="dot-red"></span>
             MATRICULA MOCK TEST
@@ -43,7 +43,7 @@ export default function MockTestSection({ onOpenEnquire }) {
         </div>
 
         {/* Mock Test Feature Highlight Card */}
-        <div className="mock-card-hero card-base">
+        <div className="mock-card-hero card-base reveal-on-scroll">
           <div className="mock-badge-strip">
             <span className="mock-status-pill">
               <Clock size={12} />

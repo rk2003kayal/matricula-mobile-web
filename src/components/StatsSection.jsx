@@ -9,7 +9,7 @@ export default function StatsSection() {
 
   const timelineStats = [
     {
-      numVal: '15,548',
+      numVal: '16,000+',
       label: 'Students Enrolled',
       icon: <Users size={24} color="#D7473B" />,
       tag: 'ACADEMIC REACH',
@@ -70,7 +70,7 @@ export default function StatsSection() {
 
   return (
     <section className="section-wrapper bg-light stats-timeline-section">
-      <div className="section-header-block">
+      <div className="section-header-block reveal-on-scroll">
         <div className="pill-label">
           <Sparkles size={12} color="#D7473B" />
           OUR TRACK RECORD
