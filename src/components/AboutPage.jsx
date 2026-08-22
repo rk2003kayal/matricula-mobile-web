@@ -35,7 +35,7 @@ export default function AboutPage({ onBack, onGoHome }) {
       icon: <Crown size={22} color="#F59E0B" fill="#F59E0B" />,
       tag: 'TIMES OF INDIA',
       spotlight: true,
-      image: '/times-award-banner.png',
+      image: '/times-award-ceremony.jpg',
     },
     {
       num: '6,27,456+',

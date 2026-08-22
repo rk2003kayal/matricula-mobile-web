@@ -244,19 +244,19 @@
   flex-direction: column;
 }
 
-/* Times of India Prestige Branding Spotlight Card with Prominent Animated Moving Light Streak */
+/* Times of India Prestige Branding Spotlight Card with Bluish Animated Moving Light Streak */
 .toi-spotlight-card {
   position: relative;
-  background: linear-gradient(145deg, #FFFFFF 0%, #FFFBEB 100%) !important;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F0F9FF 100%) !important;
   border-radius: 20px !important;
   padding: 20px 18px !important;
-  box-shadow: 0 12px 38px rgba(245, 158, 11, 0.45), 0 0 24px rgba(245, 158, 11, 0.25) !important;
+  box-shadow: 0 12px 38px rgba(14, 116, 144, 0.35), 0 0 24px rgba(56, 189, 248, 0.25) !important;
   overflow: hidden;
   z-index: 1;
-  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
 }
 
-/* High-Intensity Rotating Conic Light Streak Beam */
+/* High-Intensity Rotating Conic Bluish Light Streak Beam */
 .toi-spotlight-card::before {
   content: '';
   position: absolute;
@@ -267,12 +267,12 @@
   background: conic-gradient(
     transparent 0%, 
     transparent 65%, 
-    #F59E0B 78%, 
+    #38BDF8 78%, 
     #FFFFFF 88%, 
-    #FF3333 96%, 
+    #0284C7 96%, 
     transparent 100%
   );
-  filter: drop-shadow(0 0 10px #F59E0B) drop-shadow(0 0 16px #FFFFFF);
+  filter: drop-shadow(0 0 12px #38BDF8) drop-shadow(0 0 18px #FFFFFF);
   animation: rotateLightStreak 2.6s linear infinite;
   z-index: -2;
 }
@@ -282,7 +282,7 @@
   content: '';
   position: absolute;
   inset: 3.5px;
-  background: linear-gradient(145deg, #FFFFFF 0%, #FFFBEB 100%);
+  background: linear-gradient(145deg, #FFFFFF 0%, #F0F9FF 100%);
   border-radius: 16.5px;
   z-index: -1;
 }
@@ -302,7 +302,7 @@
   overflow: hidden;
   margin-bottom: 14px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.35);
 }
 
 .toi-card-img {
@@ -313,14 +313,14 @@
 }
 
 .toi-icon-box {
-  background: rgba(245, 158, 11, 0.18) !important;
-  border: 1px solid rgba(245, 158, 11, 0.4);
+  background: rgba(56, 189, 248, 0.16) !important;
+  border: 1px solid rgba(56, 189, 248, 0.4);
 }
 
 .toi-tag-pill {
-  color: #B45309 !important;
-  background: rgba(245, 158, 11, 0.18) !important;
-  border: 1px solid rgba(245, 158, 11, 0.5) !important;
+  color: #0369A1 !important;
+  background: rgba(56, 189, 248, 0.16) !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
   font-family: var(--font-heading);
   letter-spacing: 0.5px;
 }

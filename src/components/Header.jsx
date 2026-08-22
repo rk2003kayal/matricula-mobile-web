@@ -46,9 +46,13 @@ export default function Header({ onOpenEnquire, onNavigate }) {
       id: 'study-resources', 
       label: 'STUDY RESOURCES',
       subItems: [
-        { label: 'Class VI–XII' },
-        { label: 'Summarized Notes' },
-        { label: 'Sample Papers' }
+        { label: 'Class VI' },
+        { label: 'Class VII' },
+        { label: 'Class VIII' },
+        { label: 'Class IX' },
+        { label: 'Class X' },
+        { label: 'Class XI' },
+        { label: 'Class XII' }
       ] 
     },
     { 
